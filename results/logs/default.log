@@ -1,0 +1,720 @@
+2017-05-26 18:14:14.281 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-26 18:14:14.435 [main] INFO  com.ymt.tools.YamlUtil - [发送, 分享, 更换, 我想问, 更换, com.ymatou.shop:id/choose_picture, com.ymatou.shop:id/iv_write, com.ymatou.shop:id/rl_include_product_comment, com.ymatou.shop:id/comment]
+2017-05-26 18:14:14.438 [main] INFO  com.ymt.tools.YamlUtil - //*[@text='登录']
+2017-05-26 18:14:14.439 [main] INFO  com.ymt.tools.YamlUtil - devices:4
+2017-05-26 18:16:23.880 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-26 18:16:32.369 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-26 18:18:43.341 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-26 18:18:43.410 [main] INFO  com.ymt.traveler.AndroidTraveler - com.ymt.entity.AndroidCapability@2a556333
+2017-05-26 18:19:33.978 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-26 18:19:34.045 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-26 19:54:17.936 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-26 19:54:17.993 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-26 19:57:49.078 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-26 19:57:49.135 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-26 19:58:38.233 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-26 19:58:38.293 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-26 20:01:43.088 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-26 20:01:43.156 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-27 10:02:16.187 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-27 10:02:16.300 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-27 10:02:28.146 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-27 10:02:28.228 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-27 10:08:04.752 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-27 10:08:10.827 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-27 10:08:29.048 [main] INFO  com.ymt.operation.OperateAppium - udid:INMN8TDIK7QKH6EI
+2017-05-27 10:08:33.113 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_follow_button_state]
+2017-05-27 10:08:36.304 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_home_coupon_dialog_cancel]
+2017-05-27 10:08:39.181 [main] INFO  com.ymt.traveler.Traveler - mainActivityString:.reconstract.MainActivity
+2017-05-27 10:08:39.755 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:08:39.755 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:08:40.207 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:08:40.207 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:08:41.571 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:08:42.609 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:08:42.609 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:08:42.925 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:08:42.925 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:08:43.539 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:08:44.673 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_RIGHT
+2017-05-27 10:08:44.673 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_RIGHT
+2017-05-27 10:08:45.408 [main] INFO  com.ymt.operation.OperateAppium -  .launcher.Launcher : SWIP_RIGHT ,duration 100
+2017-05-27 10:08:47.599 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:08:48.047 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:08:48.048 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/0.ori.png
+2017-05-27 10:08:48.600 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:08:48.600 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:08:48.786 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:08:48.786 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:08:48.814 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:08:49.870 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:08:49.870 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:08:50.580 [main] INFO  com.ymt.operation.OperateAppium -  .launcher.Launcher : SWIP_UP ,duration 100
+2017-05-27 10:08:52.678 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:08:53.059 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:08:53.059 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/1.ori.png
+2017-05-27 10:08:53.596 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:08:53.597 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:08:53.740 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:08:53.740 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:08:54.114 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:08:55.199 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:08:55.199 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:08:55.817 [main] INFO  com.ymt.operation.OperateAppium -  .launcher.Launcher : SWIP_UP ,duration 100
+2017-05-27 10:08:57.912 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:08:58.321 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:08:58.321 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/2.ori.png
+2017-05-27 10:08:58.899 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:08:58.899 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:08:59.047 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:08:59.047 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:08:59.070 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:09:00.140 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:09:00.140 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:09:00.268 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:09:00.269 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:09:00.349 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:09:01.423 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:09:01.424 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:09:01.575 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:09:01.575 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:09:01.637 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:09:02.715 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:09:02.715 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:09:03.350 [main] INFO  com.ymt.operation.OperateAppium -  .launcher.Launcher : SWIP_UP ,duration 100
+2017-05-27 10:09:05.828 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:09:06.296 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:09:06.296 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/3.ori.png
+2017-05-27 10:09:06.821 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:09:06.821 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:09:06.925 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:09:06.925 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:09:07.563 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:09:17.719 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-27 10:09:23.798 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-27 10:09:41.226 [main] INFO  com.ymt.operation.OperateAppium - udid:INMN8TDIK7QKH6EI
+2017-05-27 10:09:44.960 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_follow_button_state]
+2017-05-27 10:09:48.894 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_home_coupon_dialog_cancel]
+2017-05-27 10:09:51.794 [main] INFO  com.ymt.traveler.Traveler - mainActivityString:.reconstract.MainActivity
+2017-05-27 10:09:52.328 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:09:52.328 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:09:53.013 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:09:53.013 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:09:54.125 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:09:55.204 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_DOWN
+2017-05-27 10:09:55.204 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_DOWN
+2017-05-27 10:09:55.833 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.MainActivity : SWIP_DOWN ,duration 100
+2017-05-27 10:09:57.787 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:09:58.307 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:09:58.307 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/0.ori.png
+2017-05-27 10:09:58.869 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:09:58.870 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:09:59.091 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:09:59.091 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:09:59.142 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:00.215 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:00.216 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:00.442 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:00.442 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:01.094 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:02.178 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:02.178 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:02.608 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:02.608 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:02.655 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:03.699 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:03.699 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:04.059 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:04.059 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:04.087 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:05.190 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:05.190 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:05.538 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:05.538 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:05.558 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:06.616 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:06.617 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:06.833 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:06.833 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:06.881 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:07.928 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:07.928 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:08.127 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:08.127 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:08.186 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:09.246 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:09.246 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:09.511 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:09.511 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:10.163 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:11.259 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:10:11.259 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:10:11.904 [main] INFO  com.ymt.operation.OperateAppium -  .launcher.Launcher : SWIP_UP ,duration 100
+2017-05-27 10:10:14.460 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:10:14.934 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:10:14.935 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/1.ori.png
+2017-05-27 10:10:15.479 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:15.480 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:15.684 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:15.684 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:15.744 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:16.799 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:16.799 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:17.049 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:17.049 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:17.111 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:18.176 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:10:18.177 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:10:18.357 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:10:18.357 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:10:18.401 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:10:19.466 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_LEFT
+2017-05-27 10:10:19.467 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_LEFT
+2017-05-27 10:10:20.047 [Forwarding currentActivity on session 9327b075-d1c3-4441-b335-a16a072bc8d8 to remote] INFO  org.apache.http.impl.execchain.RetryExec - I/O exception (java.net.SocketException) caught when processing request to {}->http://127.0.0.1:4723: Connection reset
+2017-05-27 10:10:20.047 [Forwarding currentActivity on session 9327b075-d1c3-4441-b335-a16a072bc8d8 to remote] INFO  org.apache.http.impl.execchain.RetryExec - Retrying request to {}->http://127.0.0.1:4723
+2017-05-27 10:10:43.126 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-27 10:10:49.195 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-27 10:11:07.318 [main] INFO  com.ymt.operation.OperateAppium - udid:INMN8TDIK7QKH6EI
+2017-05-27 10:11:10.403 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_follow_button_state]
+2017-05-27 10:11:14.166 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_home_coupon_dialog_cancel]
+2017-05-27 10:11:17.002 [main] INFO  com.ymt.traveler.Traveler - mainActivityString:.reconstract.MainActivity
+2017-05-27 10:11:17.599 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:11:17.599 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:11:18.032 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:11:18.033 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:11:18.072 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:11:19.129 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:11:19.130 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:11:19.624 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:11:19.624 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:11:20.421 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:11:21.520 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_RIGHT
+2017-05-27 10:11:21.520 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_RIGHT
+2017-05-27 10:11:22.235 [main] INFO  com.ymt.operation.OperateAppium -  .launcher.Launcher : SWIP_RIGHT ,duration 100
+2017-05-27 10:11:24.331 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:29:48.986 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-27 10:29:55.072 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-27 10:30:12.898 [main] INFO  com.ymt.operation.OperateAppium - udid:INMN8TDIK7QKH6EI
+2017-05-27 10:30:18.332 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_home_coupon_dialog_cancel]
+2017-05-27 10:30:21.264 [main] INFO  com.ymt.traveler.Traveler - mainActivityString:.reconstract.MainActivity
+2017-05-27 10:30:21.854 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:30:21.854 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:33:22.124 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:0
+2017-05-27 10:33:22.125 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:42:46.526 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-27 10:42:52.619 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-27 10:43:09.589 [main] INFO  com.ymt.operation.OperateAppium - udid:INMN8TDIK7QKH6EI
+2017-05-27 10:43:17.056 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_home_coupon_dialog_cancel]
+2017-05-27 10:43:20.024 [main] INFO  com.ymt.traveler.Traveler - mainActivityString:.reconstract.MainActivity
+2017-05-27 10:43:20.634 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:43:20.635 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:43:21.344 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.MainActivity : SWIP_UP ,duration 100
+2017-05-27 10:43:23.015 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:23.429 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:23.430 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/0.ori.png
+2017-05-27 10:43:23.985 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:43:23.986 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:43:24.427 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:14
+2017-05-27 10:43:24.435 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:43:24.435 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@resource-id='com.ymatou.shop:id/scv_home_fragment_header_cart']
+2017-05-27 10:43:24.726 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.LinearLayout[@resource-id='com.ymatou.shop:id/scv_home_fragment_header_cart']],nextAction:Click
+2017-05-27 10:43:24.796 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:43:24.810 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(894, 72) 
+2017-05-27 10:43:26.374 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:26.767 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:26.767 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/1.ori.png
+2017-05-27 10:43:27.850 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_DOWN
+2017-05-27 10:43:27.850 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_DOWN
+2017-05-27 10:43:28.482 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.cart.channel.ui.CartActivity : SWIP_DOWN ,duration 100
+2017-05-27 10:43:30.245 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:30.758 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:30.758 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/2.ori.png
+2017-05-27 10:43:31.347 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:43:31.347 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:43:31.567 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:43:31.570 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:43:31.570 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[0,140][1080,617]']
+2017-05-27 10:43:31.686 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.LinearLayout[@bounds='[0,140][1080,617]']],nextAction:Click
+2017-05-27 10:43:31.764 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:43:31.783 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 140) 
+2017-05-27 10:43:33.508 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:33.964 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:33.965 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/3.ori.png
+2017-05-27 10:43:34.737 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:43:34.738 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:43:34.855 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:43:34.857 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:43:34.857 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[0,798][1080,1633]']
+2017-05-27 10:43:34.964 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.LinearLayout[@bounds='[0,798][1080,1633]']],nextAction:Click
+2017-05-27 10:43:35.030 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:43:35.052 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 798) 
+2017-05-27 10:43:36.782 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:37.270 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:37.270 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/4.ori.png
+2017-05-27 10:43:38.081 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:43:38.081 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:43:38.183 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:43:38.185 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:43:38.185 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[0,798][1080,1633]']
+2017-05-27 10:43:38.262 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.LinearLayout[@bounds='[0,798][1080,1633]']],nextAction:Click
+2017-05-27 10:43:38.332 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:43:38.350 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 798) 
+2017-05-27 10:43:40.058 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:40.497 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:40.497 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/5.ori.png
+2017-05-27 10:43:41.266 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_DOWN
+2017-05-27 10:43:41.266 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_DOWN
+2017-05-27 10:43:41.891 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.cart.channel.ui.CartActivity : SWIP_DOWN ,duration 100
+2017-05-27 10:43:43.707 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:44.199 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:44.200 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/6.ori.png
+2017-05-27 10:43:44.740 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:43:44.740 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:43:44.854 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:43:44.856 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:43:44.856 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[0,140][1080,617]']
+2017-05-27 10:43:44.941 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.LinearLayout[@bounds='[0,140][1080,617]']],nextAction:Click
+2017-05-27 10:43:45.037 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:43:45.058 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 140) 
+2017-05-27 10:43:46.853 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:47.252 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:47.252 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/7.ori.png
+2017-05-27 10:43:48.021 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:43:48.021 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:43:48.135 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:43:48.136 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:43:48.136 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.ImageView[@resource-id='com.ymatou.shop:id/iv_back']
+2017-05-27 10:43:48.256 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.ImageView[@resource-id='com.ymatou.shop:id/iv_back']],nextAction:Click
+2017-05-27 10:43:48.315 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.ImageView 
+2017-05-27 10:43:48.334 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 60) 
+2017-05-27 10:43:50.073 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:50.485 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:50.485 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/8.ori.png
+2017-05-27 10:43:52.396 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:43:52.396 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:43:52.677 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:14
+2017-05-27 10:43:52.681 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:43:52.681 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[324,252][540,313]']
+2017-05-27 10:43:53.304 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.LinearLayout[@bounds='[324,252][540,313]']],nextAction:Click
+2017-05-27 10:43:53.354 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:43:53.376 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(324, 252) 
+2017-05-27 10:43:54.966 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:55.340 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:55.340 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/9.ori.png
+2017-05-27 10:43:56.107 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:43:56.107 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:43:56.499 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:20
+2017-05-27 10:43:56.501 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:43:56.501 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@resource-id='com.ymatou.shop:id/oversea_operate_single_three']
+2017-05-27 10:43:57.329 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.LinearLayout[@resource-id='com.ymatou.shop:id/oversea_operate_single_three']],nextAction:Click
+2017-05-27 10:43:57.446 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:43:57.477 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(573, 1132) 
+2017-05-27 10:43:59.357 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:43:59.800 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:43:59.800 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/0.ori.png
+2017-05-27 10:44:00.752 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:44:00.753 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:44:01.027 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:11
+2017-05-27 10:44:01.028 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:44:01.029 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[858,310][1050,403]']
+2017-05-27 10:44:01.463 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.LinearLayout[@bounds='[858,310][1050,403]']],nextAction:Click
+2017-05-27 10:44:01.551 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:44:01.591 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(858, 310) 
+2017-05-27 10:44:03.252 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:44:03.641 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:44:03.642 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/1.ori.png
+2017-05-27 10:44:04.406 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:44:04.406 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:44:05.154 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.common.search.ui.BrandDetailActivity : SWIP_UP ,duration 100
+2017-05-27 10:44:06.946 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:44:07.381 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:44:07.381 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/2.ori.png
+2017-05-27 10:44:07.955 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:44:07.955 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:44:08.164 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:6
+2017-05-27 10:44:08.166 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:44:08.166 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@resource-id='com.ymatou.shop:id/ftv_live_list']
+2017-05-27 10:44:08.288 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.LinearLayout[@resource-id='com.ymatou.shop:id/ftv_live_list']],nextAction:Click
+2017-05-27 10:44:08.384 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:44:08.413 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(861, 60) 
+2017-05-27 10:44:10.184 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:44:10.616 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:44:10.616 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/3.ori.png
+2017-05-27 10:44:11.390 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:44:11.391 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:44:11.677 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:33
+2017-05-27 10:44:11.679 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:44:11.679 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.TextView[@bounds='[786,507][1050,597]']
+2017-05-27 10:44:11.829 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (cc42e5b9-b942-40ae-8688-a400d130f819)] -> xpath: //android.widget.TextView[@bounds='[786,507][1050,597]']],nextAction:Click
+2017-05-27 10:44:11.894 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.TextView 
+2017-05-27 10:44:11.929 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(786, 507) 
+2017-05-27 10:54:09.554 [main] INFO  com.ymt.tools.YamlUtil - C:\Users\sunsheng\Desktop\YmtAPP\src\main\resources\config.yml
+2017-05-27 10:54:15.627 [main] INFO  com.ymt.traveler.AndroidTraveler - .ui.activity.SplashActivity
+2017-05-27 10:54:32.246 [main] INFO  com.ymt.operation.OperateAppium - udid:INMN8TDIK7QKH6EI
+2017-05-27 10:54:36.970 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_follow_button_state]
+2017-05-27 10:54:40.558 [main] WARN  com.ymt.operation.OperateAppium - 查找元素超时!!3秒之后还没找到元素 [By.id: com.ymatou.shop:id/tv_home_coupon_dialog_cancel]
+2017-05-27 10:54:43.465 [main] INFO  com.ymt.traveler.Traveler - mainActivityString:.reconstract.MainActivity
+2017-05-27 10:54:44.018 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:54:44.023 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:54:44.428 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:14
+2017-05-27 10:54:44.435 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:54:44.435 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[216,1752][432,1920]']
+2017-05-27 10:54:44.589 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.LinearLayout[@bounds='[216,1752][432,1920]']],nextAction:Click
+2017-05-27 10:54:44.678 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:54:44.699 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(216, 1752) 
+2017-05-27 10:54:46.271 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:54:46.708 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:54:46.709 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/0.ori.png
+2017-05-27 10:54:48.403 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:54:48.404 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:54:49.084 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:32
+2017-05-27 10:54:49.091 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:54:49.091 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[324,247][486,322]']
+2017-05-27 10:54:49.310 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.LinearLayout[@bounds='[324,247][486,322]']],nextAction:Click
+2017-05-27 10:54:49.456 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:54:49.480 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(324, 247) 
+2017-05-27 10:54:51.270 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:54:51.756 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:54:51.756 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/1.ori.png
+2017-05-27 10:54:52.537 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:54:52.538 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:54:52.918 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:32
+2017-05-27 10:54:52.921 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:54:52.922 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.ImageView[@resource-id='com.ymatou.shop:id/btn_item_live_show_delete']
+2017-05-27 10:54:53.085 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.ImageView[@resource-id='com.ymatou.shop:id/btn_item_live_show_delete']],nextAction:Click
+2017-05-27 10:54:53.162 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.ImageView 
+2017-05-27 10:54:53.192 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(1005, 503) 
+2017-05-27 10:54:54.958 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:54:55.402 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:54:55.403 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/2.ori.png
+2017-05-27 10:54:56.352 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_DOWN
+2017-05-27 10:54:56.353 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_DOWN
+2017-05-27 10:54:56.409 [main] ERROR com.ymt.operation.OperateAppium - swip SWIP_DOWN error : e
+org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 51 milliseconds
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'SUNSHENG', ip: '172.16.13.4', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=com.ymatou.shop, deviceScreenSize=1080x1920, networkConnectionEnabled=true, noReset=true, warnings={}, databaseEnabled=false, deviceName=INMN8TDIK7QKH6EI, platform=LINUX, deviceUDID=INMN8TDIK7QKH6EI, appActivity=.ui.activity.SplashActivity, desired={appPackage=com.ymatou.shop, appActivity=.ui.activity.SplashActivity, noReset=true, newCommandTimeout=30, platformVersion=6.0, automationName=Appium, browserName=, unicodeKeyboard=true, platformName=Android, deviceName=INMN8TDIK7QKH6EI, autoAcceptAlerts=true}, newCommandTimeout=30, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, browserName=, javascriptEnabled=true, deviceModel=Redmi Note 4, unicodeKeyboard=true, platformName=Android, deviceManufacturer=Xiaomi, autoAcceptAlerts=true}]
+Session ID: 4cbff85c-e55b-464e-be13-1a81212c262d
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at io.appium.java_client.PerformsTouchActions.performTouchAction(PerformsTouchActions.java:39)
+	at io.appium.java_client.TouchAction.perform(TouchAction.java:322)
+	at io.appium.java_client.android.AndroidDriver.swipe(AndroidDriver.java:160)
+	at com.ymt.operation.OperateAppium.swipeToDown(OperateAppium.java:322)
+	at com.ymt.operation.OperateAppium.swipeToDown(OperateAppium.java:305)
+	at com.ymt.operation.OperateAppium.swip(OperateAppium.java:374)
+	at com.ymt.operation.OperateAppium.doElementAction(OperateAppium.java:436)
+	at com.ymt.traveler.Traveler.start(Traveler.java:153)
+	at com.ymt.traveler.Traveler.main(Traveler.java:527)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+2017-05-27 10:54:56.953 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.MainActivity : SWIP_DOWN ,duration 100
+2017-05-27 10:54:58.721 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:54:59.203 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:54:59.203 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/3.ori.png
+2017-05-27 10:54:59.828 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:54:59.828 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:00.082 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:32
+2017-05-27 10:55:00.085 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:00.085 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[326,1599][634,1751]']
+2017-05-27 10:55:00.208 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.LinearLayout[@bounds='[326,1599][634,1751]']],nextAction:Click
+2017-05-27 10:55:00.311 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:55:00.346 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(326, 1599) 
+2017-05-27 10:55:02.076 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:02.522 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:02.522 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/4.ori.png
+2017-05-27 10:55:03.611 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:03.611 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:04.005 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:16
+2017-05-27 10:55:04.007 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:04.007 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[0,558][1080,750]']
+2017-05-27 10:55:04.816 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.LinearLayout[@bounds='[0,558][1080,750]']],nextAction:Click
+2017-05-27 10:55:04.930 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:55:04.959 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 558) 
+2017-05-27 10:55:06.631 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:07.107 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:07.107 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/5.ori.png
+2017-05-27 10:55:07.918 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_RIGHT
+2017-05-27 10:55:07.918 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_RIGHT
+2017-05-27 10:55:08.606 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.LiveDetailActivity : SWIP_RIGHT ,duration 100
+2017-05-27 10:55:10.188 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:10.608 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:10.608 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/6.ori.png
+2017-05-27 10:55:11.187 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:11.187 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:11.411 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:16
+2017-05-27 10:55:11.413 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:11.413 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[858,265][1050,358]']
+2017-05-27 10:55:11.794 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.LinearLayout[@bounds='[858,265][1050,358]']],nextAction:Click
+2017-05-27 10:55:11.872 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:55:11.892 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(858, 265) 
+2017-05-27 10:55:13.537 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:14.049 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:14.049 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/7.ori.png
+2017-05-27 10:55:14.892 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_RIGHT
+2017-05-27 10:55:14.892 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_RIGHT
+2017-05-27 10:55:15.496 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.LiveDetailActivity : SWIP_RIGHT ,duration 100
+2017-05-27 10:55:17.171 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:17.758 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:17.758 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/8.ori.png
+2017-05-27 10:55:18.410 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_LEFT
+2017-05-27 10:55:18.410 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_LEFT
+2017-05-27 10:55:19.047 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.LiveDetailActivity : SWIP_LEFT ,duration 100
+2017-05-27 10:55:20.698 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:21.097 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:21.097 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/9.ori.png
+2017-05-27 10:55:21.678 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:21.678 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:21.858 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:16
+2017-05-27 10:55:21.860 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:21.860 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.FrameLayout[@bounds='[744,1597][1056,1920]']
+2017-05-27 10:55:22.413 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.FrameLayout[@bounds='[744,1597][1056,1920]']],nextAction:Click
+2017-05-27 10:55:22.510 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.FrameLayout 
+2017-05-27 10:55:22.538 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(744, 1597) 
+2017-05-27 10:55:24.215 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:24.711 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:24.711 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/0.ori.png
+2017-05-27 10:55:25.470 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:25.470 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:25.590 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:19
+2017-05-27 10:55:25.591 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:25.591 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.ImageView[@bounds='[726,954][1050,1278]']
+2017-05-27 10:55:25.950 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.ImageView[@bounds='[726,954][1050,1278]']],nextAction:Click
+2017-05-27 10:55:26.049 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.ImageView 
+2017-05-27 10:55:26.070 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(726, 954) 
+2017-05-27 10:55:27.391 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:27.712 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:27.713 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/1.ori.png
+2017-05-27 10:55:28.726 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:55:28.726 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:55:29.397 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.ProductDetailActivity : SWIP_UP ,duration 100
+2017-05-27 10:55:30.886 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:31.201 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:31.201 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/2.ori.png
+2017-05-27 10:55:31.764 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:31.764 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:31.849 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:1
+2017-05-27 10:55:31.850 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:31.850 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.ImageView[@resource-id='com.ymatou.shop:id/touch_view']
+2017-05-27 10:55:31.938 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.ImageView[@resource-id='com.ymatou.shop:id/touch_view']],nextAction:Click
+2017-05-27 10:55:32.002 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.ImageView 
+2017-05-27 10:55:32.016 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 60) 
+2017-05-27 10:55:33.468 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:33.772 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:33.772 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/3.ori.png
+2017-05-27 10:55:35.153 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:55:35.153 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:55:35.869 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.ProductDetailActivity : SWIP_UP ,duration 100
+2017-05-27 10:55:37.240 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:37.585 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:37.585 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/4.ori.png
+2017-05-27 10:55:38.185 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:38.186 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:38.452 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:21
+2017-05-27 10:55:38.455 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:38.455 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[0,1044][1080,1722]']
+2017-05-27 10:55:39.082 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.LinearLayout[@bounds='[0,1044][1080,1722]']],nextAction:Click
+2017-05-27 10:55:39.193 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:55:39.240 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 1044) 
+2017-05-27 10:55:40.719 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:41.169 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:41.169 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/5.ori.png
+2017-05-27 10:55:42.449 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:42.449 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:42.499 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:back
+2017-05-27 10:55:45.225 [main] INFO  com.ymt.operation.OperateAppium - 返回 do back
+2017-05-27 10:55:46.283 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:46.283 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:46.550 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:21
+2017-05-27 10:55:46.553 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:46.553 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.LinearLayout[@bounds='[0,228][1080,347]']
+2017-05-27 10:55:46.703 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.LinearLayout[@bounds='[0,228][1080,347]']],nextAction:Click
+2017-05-27 10:55:46.762 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.LinearLayout 
+2017-05-27 10:55:46.787 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 228) 
+2017-05-27 10:55:48.127 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:48.511 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:48.512 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/6.ori.png
+2017-05-27 10:55:49.303 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:49.304 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:49.346 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:1
+2017-05-27 10:55:49.348 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:49.348 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.ImageView[@resource-id='com.ymatou.shop:id/touch_view']
+2017-05-27 10:55:49.487 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.ImageView[@resource-id='com.ymatou.shop:id/touch_view']],nextAction:Click
+2017-05-27 10:55:49.595 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.ImageView 
+2017-05-27 10:55:49.614 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 60) 
+2017-05-27 10:55:51.707 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:52.377 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:52.378 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/7.ori.png
+2017-05-27 10:55:53.699 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:55:53.700 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:55:53.916 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:21
+2017-05-27 10:55:53.918 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:55:53.918 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.TextView[@resource-id='com.ymatou.shop:id/tv_include_product_buy']
+2017-05-27 10:55:54.507 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.TextView[@resource-id='com.ymatou.shop:id/tv_include_product_buy']],nextAction:Click
+2017-05-27 10:55:54.630 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.TextView 
+2017-05-27 10:55:54.661 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(785, 1788) 
+2017-05-27 10:55:56.091 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:55:56.440 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:55:56.440 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/8.ori.png
+2017-05-27 10:55:57.543 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:55:57.543 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:55:58.212 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.ProductDetailActivity : SWIP_UP ,duration 100
+2017-05-27 10:55:59.755 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:00.153 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:00.153 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/9.ori.png
+2017-05-27 10:56:00.730 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_DOWN
+2017-05-27 10:56:00.730 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_DOWN
+2017-05-27 10:56:01.332 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.ProductDetailActivity : SWIP_DOWN ,duration 100
+2017-05-27 10:56:02.727 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:03.087 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:03.088 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/0.ori.png
+2017-05-27 10:56:03.633 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:56:03.633 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:56:04.265 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.ProductDetailActivity : SWIP_UP ,duration 100
+2017-05-27 10:56:05.675 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:06.034 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:06.034 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/1.ori.png
+2017-05-27 10:56:06.629 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:06.629 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:06.706 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:3
+2017-05-27 10:56:06.708 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:06.708 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.ImageView[@resource-id='com.ymatou.shop:id/img_product_choiceSpecsOrSize']
+2017-05-27 10:56:06.789 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.ImageView[@resource-id='com.ymatou.shop:id/img_product_choiceSpecsOrSize']],nextAction:Click
+2017-05-27 10:56:06.854 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.ImageView 
+2017-05-27 10:56:06.876 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(30, 895) 
+2017-05-27 10:56:08.261 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:08.625 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:08.626 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/2.ori.png
+2017-05-27 10:56:09.546 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:09.546 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:09.599 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:1
+2017-05-27 10:56:09.601 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:09.602 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.ImageView[@resource-id='com.ymatou.shop:id/touch_view']
+2017-05-27 10:56:09.652 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.ImageView[@resource-id='com.ymatou.shop:id/touch_view']],nextAction:Click
+2017-05-27 10:56:09.700 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.ImageView 
+2017-05-27 10:56:09.714 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(0, 60) 
+2017-05-27 10:56:11.603 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:12.097 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:12.097 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/3.ori.png
+2017-05-27 10:56:15.905 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:15.905 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:16.041 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:3
+2017-05-27 10:56:16.043 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:16.043 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_asc']
+2017-05-27 10:56:16.154 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_asc']],nextAction:Click
+2017-05-27 10:56:16.219 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.Button 
+2017-05-27 10:56:16.237 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(928, 1571) 
+2017-05-27 10:56:17.691 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:18.055 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:18.055 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/4.ori.png
+2017-05-27 10:56:18.833 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:56:18.833 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:56:19.507 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.ProductDetailActivity : SWIP_UP ,duration 100
+2017-05-27 10:56:21.181 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:21.566 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:21.566 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/5.ori.png
+2017-05-27 10:56:22.112 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:56:22.112 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:56:22.757 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.ProductDetailActivity : SWIP_UP ,duration 100
+2017-05-27 10:56:24.187 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:24.609 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:24.609 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/6.ori.png
+2017-05-27 10:56:25.180 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:25.180 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:25.312 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:56:25.315 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:25.315 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_dec']
+2017-05-27 10:56:25.417 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_dec']],nextAction:Click
+2017-05-27 10:56:25.484 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.Button 
+2017-05-27 10:56:25.505 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(684, 1571) 
+2017-05-27 10:56:26.874 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:27.247 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:27.247 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/7.ori.png
+2017-05-27 10:56:28.115 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:28.116 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:28.227 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:3
+2017-05-27 10:56:28.242 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:28.243 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_asc']
+2017-05-27 10:56:28.352 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_asc']],nextAction:Click
+2017-05-27 10:56:28.416 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.Button 
+2017-05-27 10:56:28.445 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(928, 1571) 
+2017-05-27 10:56:29.845 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:30.197 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:30.197 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/8.ori.png
+2017-05-27 10:56:30.975 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_LEFT
+2017-05-27 10:56:30.975 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_LEFT
+2017-05-27 10:56:31.592 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.ProductDetailActivity : SWIP_LEFT ,duration 100
+2017-05-27 10:56:32.997 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:33.349 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:33.349 [main] INFO  com.ymt.operation.OperateAppium - 滑动的截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/9.ori.png
+2017-05-27 10:56:33.913 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:33.913 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:34.059 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:56:34.061 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:34.061 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_dec']
+2017-05-27 10:56:34.168 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_dec']],nextAction:Click
+2017-05-27 10:56:34.253 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.Button 
+2017-05-27 10:56:34.270 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(684, 1571) 
+2017-05-27 10:56:35.675 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:36.061 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:36.061 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/0.ori.png
+2017-05-27 10:56:36.865 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:36.865 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:36.955 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:3
+2017-05-27 10:56:36.958 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:36.958 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_asc']
+2017-05-27 10:56:37.032 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_asc']],nextAction:Click
+2017-05-27 10:56:37.102 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.Button 
+2017-05-27 10:56:37.131 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(928, 1571) 
+2017-05-27 10:56:38.489 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:38.857 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:38.857 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/1.ori.png
+2017-05-27 10:56:39.701 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:39.701 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:39.826 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:56:39.829 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:39.829 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_asc']
+2017-05-27 10:56:39.920 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_asc']],nextAction:Click
+2017-05-27 10:56:39.980 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.Button 
+2017-05-27 10:56:39.999 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(928, 1571) 
+2017-05-27 10:56:41.415 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:41.798 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:41.798 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/2.ori.png
+2017-05-27 10:56:42.537 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:42.537 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:42.606 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:56:42.607 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:42.607 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_dec']
+2017-05-27 10:56:42.682 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.Button[@resource-id='com.ymatou.shop:id/btn_numerical_dec']],nextAction:Click
+2017-05-27 10:56:42.744 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.Button 
+2017-05-27 10:56:42.764 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(684, 1571) 
+2017-05-27 10:56:44.123 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:44.497 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:44.497 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/3.ori.png
+2017-05-27 10:56:45.242 [main] INFO  com.ymt.traveler.Traveler - next action is : Click
+2017-05-27 10:56:45.243 [main] INFO  com.ymt.operation.OperateAppium - 开始获取pagesource
+2017-05-27 10:56:45.330 [main] INFO  com.ymt.traveler.Traveler - 当前页面过滤掉不能点击的元素后可操作元素大小为:4
+2017-05-27 10:56:45.332 [main] INFO  com.ymt.traveler.Traveler - app name: com.ymatou.shop
+2017-05-27 10:56:45.332 [main] INFO  com.ymt.traveler.Traveler - 元素定位xpath为://android.widget.ImageView[@resource-id='com.ymatou.shop:id/img_product_choiceSpecsOrSize']
+2017-05-27 10:56:45.395 [main] INFO  com.ymt.operation.OperateAppium - element:[[AndroidDriver:  on LINUX (4cbff85c-e55b-464e-be13-1a81212c262d)] -> xpath: //android.widget.ImageView[@resource-id='com.ymatou.shop:id/img_product_choiceSpecsOrSize']],nextAction:Click
+2017-05-27 10:56:45.460 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件tagName :android.widget.ImageView 
+2017-05-27 10:56:45.489 [main] INFO  com.ymt.operation.OperateAppium - 随机点击控件Location :(30, 895) 
+2017-05-27 10:56:46.906 [main] INFO  com.ymt.operation.OperateAppium - 开始传输------
+2017-05-27 10:56:47.271 [main] INFO  com.ymt.operation.OperateAppium - 传输本地完成------
+2017-05-27 10:56:47.271 [main] INFO  com.ymt.operation.OperateAppium - 点击截图:C:/Users/sunsheng/Desktop/YmtAPP/results/screenshots/4.ori.png
+2017-05-27 10:56:48.110 [main] INFO  com.ymt.traveler.Traveler - next action is : SWIP_UP
+2017-05-27 10:56:48.111 [main] INFO  com.ymt.operation.OperateAppium - element:null,nextAction:SWIP_UP
+2017-05-27 10:56:48.799 [main] INFO  com.ymt.operation.OperateAppium -  .reconstract.live.ui.ProductDetailActivity : SWIP_UP ,duration 100

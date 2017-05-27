@@ -1,0 +1,77 @@
+capability:
+  newCommandTimeout: 120
+  launchTimeout: 120000
+  platformName: ""
+  autoWebview: "false"
+  autoLaunch: "true"
+  noReset: "true"
+androidCapability:
+  appPackage: "com.ymatou.shop"
+  appActivity: ".ui.activity.SplashActivity"
+  #logCmd: "adb -s #udid# logcat -b main -b system -b events -b radio *:D | grep xxx"
+  logCmd: "adb -s #udid# logcat -b main -b system -b events -b radio *:D"
+  deviceNames:
+    #模拟器
+    - deviceName: "127.0.0.1:62001"
+      platformVersion: "4.4.2"
+      #app: ""
+      appium: "http://127.0.0.1:4723/wd/hub"
+    #荣耀8
+    - deviceName: "NXTDU16B05010871"
+      platformVersion: "7.0"
+      #aapp: ""
+      appium: "http://127.0.0.1:4723/wd/hub"
+    #vivo
+    - deviceName: "94fabcfa"
+      platformVersion: "5.1.1"
+      #app: ""
+      appium: "http://127.0.0.1:4723/wd/hub"
+   #xiaomi
+    - deviceName: "INMN8TDIK7QKH6EI"
+      platformVersion: "6.0"
+      #app: ""
+      appium: "http://127.0.0.1:4723/wd/hub"
+iosCapability:
+  deviceName: "iPhone 6 Plus"
+  logCmd: "idevicesyslog -d -u #udid#|grep xxx"
+  bundleId: ""
+  screenshotWaitTimeout: "10"
+  platformVersion: "9.3"
+  autoAcceptAlerts: "true"
+  #app: ""
+  appium: "http://127.0.0.1:4730/wd/hub"
+clickList:
+  - "android.widget.Button"
+  - "android.widget.ImageButton"
+  - "android.widget.TextView"
+  - "android.widget.ImageView"
+  - "android.widget.FrameLayout"
+  - "android.widget.LinearLayout"
+  #黑名单 支持text,name,resourceId的过滤
+blackList:
+  - "发送"
+  - "分享"
+  - "更换"
+  - "我想问"
+  - "更换"
+  #选择图片
+  - "com.ymatou.shop:id/choose_picture"
+  #写笔记
+  - "com.ymatou.shop:id/iv_write"
+  #联系买手
+  - "com.ymatou.shop:id/rl_include_product_comment"
+  #笔记评价
+  - "com.ymatou.shop:id/comment"
+triggerActions:
+  #登录
+  - triggerCondition: "//*[@text='登录']"
+    actionList:
+      - step: 1
+        xpath:  ""
+        action: "back"
+        text:
+      - step: 2
+        xpath:  ""
+        action: "set"
+        text:
+
