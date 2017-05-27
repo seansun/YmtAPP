@@ -20,7 +20,7 @@ public class Traveler {
 
     private static final Logger logger = LoggerFactory.getLogger(Traveler.class);
 
-    public DataRecord record;
+    public DataRecord record = new DataRecord();
 
     public List<Step> results = new ArrayList<Step>();
 
@@ -46,7 +46,6 @@ public class Traveler {
 
     private static String currentPageAction = Action.CLICK;
 
-
     public AndroidDriver driver;
 
     public Config config;
@@ -59,13 +58,13 @@ public class Traveler {
 
     }
 
-    public void loadConfig(){
+    public void loadConfig() {
 
         config = YamlUtil.loadYaml();
 
         clickList = config.getClickList();
 
-        blackList=config.getBlackList();
+        blackList = config.getBlackList();
 
     }
 
@@ -73,24 +72,30 @@ public class Traveler {
     }
 
 
-    public void tearDown() {
+    public void afterTravel() {
 
-        driver.quit();
+        try {
+            driver.quit();
 
-        record.setPageCount(pageCount);
+        } catch (Exception e) {
 
-        record.setResults(results);
+            logger.error("driver.quit 出现异常，{}", e.getStackTrace());
 
-        record.setDuringTime(String.format("%s s", (System.currentTimeMillis() - beginTime) / 1000));
+        } finally {
 
-        new Report().generateReport(record, "YMT", operateAppium.getMaxScreenshotCount());
+            record.setPageCount(pageCount);
 
+            record.setResults(results);
 
-        cleanEnv();
+            record.setDuringTime(String.format("%s s", (System.currentTimeMillis() - beginTime) / 1000));
 
+            new Report().generateReport(record, "YMT", operateAppium.getMaxScreenshotCount());
+
+            cleanEnv();
+        }
     }
 
-    public void caseUp() {
+    public void beforeTravel() {
 
         beginTime = System.currentTimeMillis();
 
@@ -98,65 +103,75 @@ public class Traveler {
 
 
     /**
-     *
      * 开始随机遍历
-     *
-     * */
+     */
     public void start() {
 
-        setupAppium();
-
-        caseUp();
-
-        AndroidElement skip = operateAppium.waitAutoById("com.ymatou.shop:id/tv_follow_button_state", 3);
-
-        if (null != skip) {
-            skip.click();
-            driver.pressKeyCode(4);
-        }
-
-        AndroidElement cancel = operateAppium.waitAutoById("com.ymatou.shop:id/tv_home_coupon_dialog_cancel", 3);
-
-        if (cancel != null)
-            cancel.click();
-
         try {
-            Thread.sleep(2000);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            logger.error("error:{}", e);
-        }
 
-        logger.debug("Current PageSource:{}", driver.getPageSource());
+            setupAppium();
 
-        //主页面 activity name
-        String mainActivityString = driver.currentActivity();
+            beforeTravel();
 
-        logger.info("mainActivityString:{}", mainActivityString);
+            AndroidElement skip = operateAppium.waitAutoById("com.ymatou.shop:id/tv_follow_button_state", 3);
 
-        int i = 0;
-        while (true) {
-
-            getPageInfo();
-
-            if (i > 15000) break;
-
-            AndroidElement element = null;
-
-            if (refreshPage()) {
-
-                element = beforeAction();
-
+            if (null != skip) {
+                skip.click();
+                driver.pressKeyCode(4);
             }
 
-            operateAppium.doElementAction(element, getPageAction());
+            AndroidElement cancel = operateAppium.waitAutoById("com.ymatou.shop:id/tv_home_coupon_dialog_cancel", 3);
 
-            i++;
+            if (cancel != null)
+                cancel.click();
+
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                logger.error("error:{}", e.getStackTrace());
+            }
+
+            logger.debug("Current PageSource:{}", driver.getPageSource());
+
+            //主页面 activity name
+            String mainActivityString = driver.currentActivity();
+
+            logger.info("mainActivityString:{}", mainActivityString);
+
+
+            int i = 0;
+            while (true) {
+
+                getPageInfo();
+
+                if (i > 15000) break;
+
+                AndroidElement element = null;
+
+                if (refreshPage()) {
+
+                    element = beforeAction();
+
+                }
+
+                operateAppium.doElementAction(element, getPageAction());
+
+                i++;
+
+            }
+        } catch (Exception e) {
+
+            logger.error("遍历出现异常:{}", e.getStackTrace());
+
+        } finally {
+
+            afterTravel();
 
         }
 
-        tearDown();
+
     }
 
     /*	*
@@ -326,7 +341,7 @@ public class Traveler {
     /**
      * 设置
      */
-    public  void setupEnv() {
+    public void setupEnv() {
 
         new AppiumServer("appium").start();
 

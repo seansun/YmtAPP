@@ -28,7 +28,6 @@ public class AndroidTraveler extends Traveler {
 
         this.androidCapability = config.getAndroidCapability();
 
-        logger.info("{}", androidCapability.getAppActivity());
     }
 
     @Override
@@ -88,7 +87,6 @@ public class AndroidTraveler extends Traveler {
         try {
              driver = new AndroidDriver(new URL(url),
                     capabilities);
-
 
             operateAppium=new OperateAppium(driver,results);
 
