@@ -55,6 +55,7 @@ public class OperateAppium {
 	}
 
 	public OperateAppium(AndroidDriver driver, List<Step> results) {
+
 		this.driver = driver;
 		this.results=results;
 

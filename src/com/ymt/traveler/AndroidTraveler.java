@@ -50,7 +50,8 @@ public class AndroidTraveler extends Traveler {
         //capabilities.setCapability("automationName", "Selendroid");
         //
         capabilities.setCapability("automationName", "Appium");
-        capabilities.setCapability("unicodeKeyboard", "true");
+
+        //capabilities.setCapability("unicodeKeyboard", "true");
 
         //设置收到下一条命令的超时时间,超时appium会自动关闭session 30s
         capabilities.setCapability("newCommandTimeout", "30");
@@ -85,6 +86,7 @@ public class AndroidTraveler extends Traveler {
                 .setCapability("appActivity", appActivity);
 
         try {
+
              driver = new AndroidDriver(new URL(url),
                     capabilities);
 
@@ -92,6 +94,8 @@ public class AndroidTraveler extends Traveler {
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
+
+            operateAppium=new OperateAppium(null,results);
 
             logger.error("加载 AndroidDriver 失败,{}",e);
 

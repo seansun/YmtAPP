@@ -5,26 +5,52 @@ package com.ymt.traveler;
  */
 public class AppTraveler {
 
-    Traveler traveler=new Traveler();
+
+    public static void main(String... args) {
+
+        Traveler traveler=null;
+
+        try{
+            if(args.length==1){
+                String platForm=args[0].toLowerCase();
 
 
-    /*				Timer timer = new Timer();
+               if(platForm.equals("android")){
+                   traveler=new AndroidTraveler();
 
-				timer.schedule(new TimerTask () {
+               }
+                else if(platForm.equals("ios")){
+                   traveler=new IOSTraveler();
+               }
 
-					@Override
-					public void run() {
+            }
+            else {
+                System.err.println("参数类型错误,请指定系统: android/ios!");
+            }
 
-							while (true) {
+            boolean result=traveler.start();
 
-								refresh();
+            while (result){
 
-								clickRandom();
+                result=traveler.start();
 
-						}
+            }
 
-					}
-					//5 分钟
-				},);*/
+
+
+        }
+
+        catch (Exception e){
+
+            e.printStackTrace();
+
+        }
+
+
+
+
+
+
+    }
 
 }

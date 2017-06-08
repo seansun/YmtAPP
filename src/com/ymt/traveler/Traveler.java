@@ -105,7 +105,9 @@ public class Traveler {
     /**
      * 开始随机遍历
      */
-    public void start() {
+    public boolean start() {
+
+        boolean isNeedRetry=false;
 
         try {
 
@@ -116,8 +118,10 @@ public class Traveler {
             AndroidElement skip = operateAppium.waitAutoById("com.ymatou.shop:id/tv_follow_button_state", 3);
 
             if (null != skip) {
+
                 skip.click();
                 driver.pressKeyCode(4);
+
             }
 
             AndroidElement cancel = operateAppium.waitAutoById("com.ymatou.shop:id/tv_home_coupon_dialog_cancel", 3);
@@ -165,12 +169,15 @@ public class Traveler {
 
             logger.error("遍历出现异常:{}", e.getStackTrace());
 
+            isNeedRetry=true;
+
         } finally {
 
             afterTravel();
 
         }
 
+        return isNeedRetry;
 
     }
 
@@ -354,7 +361,7 @@ public class Traveler {
     }
 
     /**
-     * 设置
+     * 清理环境
      */
     private static void cleanEnv() {
 
@@ -513,7 +520,9 @@ public class Traveler {
                 for (Operate operate : operateList) {
 
                     String action = operate.getAction();
-                    String elementXpath = operate.getXpath();
+
+                    //String elementXpath = operate.getXpath();
+
 
                     if (action.equalsIgnoreCase(Action.DOBACK)) {
 
@@ -534,12 +543,21 @@ public class Traveler {
         return result;
     }
 
-
+    
     public static void main(String... args) {
 
         Traveler traveler = new AndroidTraveler();
 
-        traveler.start();
+
+        boolean result=traveler.start();
+
+             while (result){
+
+            result=traveler.start();
+
+        }
+
+
 
     }
 

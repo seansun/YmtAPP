@@ -10,7 +10,7 @@ public class IOSTraveler extends Traveler {
 
     private static final Logger logger = LoggerFactory.getLogger(IOSTraveler.class);
 
-    public IOSTraveler(){
+    public IOSTraveler() {
 
         config.getIosCapability();
 

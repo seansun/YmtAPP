@@ -31,6 +31,11 @@ androidCapability:
       platformVersion: "6.0"
       #app: ""
       appium: "http://127.0.0.1:4723/wd/hub"
+   #锤子
+    - deviceName: "2bad9d02"
+      platformVersion: "5.1.1"
+      #app: ""
+      appium: "http://127.0.0.1:4723/wd/hub"
 iosCapability:
   deviceName: "iPhone 6 Plus"
   logCmd: "idevicesyslog -d -u #udid#|grep xxx"
