@@ -6,7 +6,6 @@ import com.ymt.tools.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.apache.commons.collections.CollectionUtils;
-import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.NodeList;
@@ -69,12 +68,14 @@ public class Traveler {
     }
 
     public void setupAppium() {
+
     }
 
 
     public void afterTravel() {
 
         try {
+
             driver.quit();
 
         } catch (Exception e) {
@@ -107,7 +108,7 @@ public class Traveler {
      */
     public boolean start() {
 
-        boolean isNeedRetry=false;
+        boolean isNeedRetry = false;
 
         try {
 
@@ -120,6 +121,7 @@ public class Traveler {
             if (null != skip) {
 
                 skip.click();
+
                 driver.pressKeyCode(4);
 
             }
@@ -144,13 +146,9 @@ public class Traveler {
 
             logger.info("mainActivityString:{}", mainActivityString);
 
-
-            int i = 0;
             while (true) {
 
                 getPageInfo();
-
-                if (i > 15000) break;
 
                 AndroidElement element = null;
 
@@ -162,14 +160,12 @@ public class Traveler {
 
                 operateAppium.doElementAction(element, getPageAction());
 
-                i++;
-
             }
         } catch (Exception e) {
 
             logger.error("遍历出现异常:{}", e.getStackTrace());
 
-            isNeedRetry=true;
+            isNeedRetry = true;
 
         } finally {
 
@@ -316,32 +312,6 @@ public class Traveler {
                 logger.info("xpathList : {} is null ", xpathList);
             }
         }
-
-/*            if  (".reconstract.user.login.ui.LoginActivity" .equals(driver
-                    .currentActivity())) {
-
-                logger.info("LoginActivity pagesource:{}",driver.getPageSource());
-
-                setPageAction(Action.DOBACK);
-
-            try {
-                //Thread.sleep(100);
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                logger.error("error:", e);
-            }
-
-        }*/
-
-/*        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            logger.error("error:", e);
-        }*/
-
         return element;
     }
 
@@ -543,20 +513,20 @@ public class Traveler {
         return result;
     }
 
-    
+
     public static void main(String... args) {
 
         Traveler traveler = new AndroidTraveler();
 
 
-        boolean result=traveler.start();
+        boolean result = traveler.start();
 
-             while (result){
 
-            result=traveler.start();
+/*        while (result) {
 
-        }
+            result = traveler.start();
 
+        }*/
 
 
     }

@@ -25,6 +25,7 @@ public class AppiumServer extends  Thread{
     public void run(){
 
         cmdInvoke("taskkill /f /t /im appium");
+        cmdInvoke("taskkill /f /t /im node.exe");
 
         logger.info("start appium");
 
@@ -34,7 +35,9 @@ public class AppiumServer extends  Thread{
 
 
     private void cmdInvoke(String cmd) {
+
         BufferedReader br = null;
+
         try {
 
             br=new CmdUtil(null).getBufferedReader(cmd);

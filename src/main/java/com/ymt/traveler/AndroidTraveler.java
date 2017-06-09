@@ -1,6 +1,5 @@
 package com.ymt.traveler;
 
-import com.android.ddmlib.IDevice;
 import com.ymt.entity.AndroidCapability;
 import com.ymt.entity.Device;
 import com.ymt.operation.OperateAppium;
@@ -39,7 +38,9 @@ public class AndroidTraveler extends Traveler {
 
         String appPackage = androidCapability.getAppPackage();
 
-        IDevice[] activityDevices = new AdbUtils().getDevices();
+
+
+        List<String> activityDevices = new AdbUtils().getDevices();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -62,7 +63,7 @@ public class AndroidTraveler extends Traveler {
 
         for (Device device : deviceList) {
 
-            if (device.getDeviceName().equals(activityDevices[0].toString())) {
+            if (device.getDeviceName().equals(activityDevices.get(0))) {
 
                 deviceName = device.getDeviceName();
                 platformVersion = device.getPlatformVersion();
