@@ -8,47 +8,38 @@ public class AppTraveler {
 
     public static void main(String... args) {
 
-        Traveler traveler=null;
+        Traveler traveler = null;
 
-        try{
-            if(args.length==1){
-                String platForm=args[0].toLowerCase();
+        try {
+            if (args.length == 1) {
+                String platForm = args[0].toLowerCase();
 
 
-               if(platForm.equals("android")){
-                   traveler=new AndroidTraveler();
+                if (platForm.equals("android")) {
+                    traveler = new AndroidTraveler();
 
-               }
-                else if(platForm.equals("ios")){
-                   traveler=new IOSTraveler();
-               }
+                } else if (platForm.equals("ios")) {
+                    traveler = new IOSTraveler();
+                }
 
-            }
-            else {
+            } else {
                 System.err.println("参数类型错误,请指定系统: android/ios!");
             }
 
-            boolean result=traveler.start();
+            boolean result = traveler.start();
 
-            while (result){
+            while (result) {
 
-                result=traveler.start();
+                result = traveler.start();
 
             }
 
 
-
-        }
-
-        catch (Exception e){
+        } catch (Exception e) {
 
             e.printStackTrace();
 
         }
-
-
-
-
 
 
     }

@@ -1,5 +1,6 @@
 package com.ymt.tools;
 
+import com.ymt.entity.Constant;
 import com.ymt.entity.DataRecord;
 import com.ymt.entity.Step;
 import com.ymt.operation.OperateAppium;
@@ -29,8 +30,9 @@ public class Report {
     private static final Logger logger = LoggerFactory.getLogger(Report.class);
 
 
-    private String REPORT_PATH=System.getProperty("user.dir")
-                      + File.separator + "results//";
+    public static String REPORT_PATH= Constant.getResultPath().getPath()
+                      + File.separator +OperateAppium.currentTime+File.separator;
+
 
     public void generateReport(DataRecord record, String reportName, int resultLimt){
         try {
@@ -41,7 +43,7 @@ public class Report {
 
             record.setTotalStep(size);
 
-            File input=new File(REPORT_PATH+ "reportTemplete.html");
+            File input=new File(Constant.getResultPath().getPath()+ "/reportTemplete.html");
 
             Document doc=  Jsoup.parse(input,"UTF-8");
 
@@ -83,6 +85,10 @@ public class Report {
 
 
 
+            Elements pageLog=doc.select("#log");
+
+            pageLog.append(record.getAppiumLog());
+            pageLog.append(record.getAppLog());
 
 
             if (size>resultLimt){
@@ -105,7 +111,8 @@ public class Report {
             //生成详细操作步骤
             writeDetail(resultList,doc);
 
-            String fileName=REPORT_PATH+"report.html";
+            String fileName=REPORT_PATH+String.format("report%s.html",OperateAppium.taskId-1);
+
 
             File file=new File(fileName);
 
@@ -156,7 +163,7 @@ public class Report {
             element.append(String.format("<td>%s</td>",step.getElementName()));
             element.append(String.format("<td>%s</td>",step.getAction()));
             // element.append("<td><a href='./screenshots/0.ps.jpg'>screenShots</a></td>");
-            element.append(String.format("<td><img src='./screenshots/%s' align='absmiddle' width='250' height='400'/></td>",step.getScreenShot().replace(OperateAppium.SCREENSHOT_PATH,"")));
+            element.append(String.format("<td><img src='./screenshots/%s/%s' align='absmiddle' width='250' height='400'/></td>",OperateAppium.taskId-1,step.getScreenShot().replace(OperateAppium.SCREENSHOT_PATH,"")));
             element.append(String.format("<td>%s</td>",step.getResult()));
 /*            element.append(String.format("<td>%s</td>",step.getOperaterLog()));
             element.append("<td>xxxx</td>");
@@ -231,9 +238,9 @@ public class Report {
 
     public static void main(String args[]){
 
-        //System.out.print(System.getProperty("user.dir"));
+        //System.out.print(Report.REPORT_PATH);
 
-        new Report().generateReport(null,null,0);
+       // new Report().generateReport(null,null,0);
 
 
     }

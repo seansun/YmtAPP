@@ -10,10 +10,9 @@ import java.util.List;
 /**
  * Created by sunsheng on 2017/5/10.
  */
-public class AdbUtils {
+public class AdbUtils extends Thread {
 
-    private static final Logger logger = LoggerFactory.getLogger(AdbUtils.class);
-
+    private static final Logger logger = LoggerFactory.getLogger("adbLog");
 
     private CmdUtil cmdUtil;
 
@@ -22,7 +21,6 @@ public class AdbUtils {
         cmdUtil = new CmdUtil(null);
 
         init();
-
 
     }
 
@@ -50,9 +48,6 @@ public class AdbUtils {
             while ((line = br.readLine()) != null) {
                 if (line.length() > 0) {
                     line = line.split("\\t")[0];
-
-                    logger.info("line :{}", line);
-
                     uuidList.add(line.trim());
                 }
             }
@@ -71,11 +66,59 @@ public class AdbUtils {
 
     }
 
+
+    @Override
+    public void run() {
+
+        String udid="2bad9d02";
+
+        String cmd=String.format("adb -s %s logcat -b main -b system -b events -b radio *:I",udid);
+
+        cleanLogcat();
+
+        getLogcatLog(cmd);
+
+    }
+
+    public void cleanLogcat() {
+
+        cmdUtil.runAdbCmd("logcat -c");
+
+    }
+
+    private void getLogcatLog(String cmd){
+
+        BufferedReader br = null;
+
+        try {
+
+            br = cmdUtil.getBufferedReader(cmd);
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                logger.info(line);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
+
+
     public static void main(String ...args) {
 
-        new AdbUtils().getDevices();
-
-
+        new AdbUtils().start();
 
     }
 }

@@ -16,6 +16,10 @@ public class IOSTraveler extends Traveler {
 
     }
 
+
+    @Override
+    public void getLog() {}
+
     public static void main(String... args) {
 
     }

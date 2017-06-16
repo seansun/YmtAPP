@@ -14,10 +14,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.*;
 
 public class OperateAppium {
+
+
 
 	private static final Logger logger = LoggerFactory.getLogger(OperateAppium.class);
 
@@ -27,15 +31,23 @@ public class OperateAppium {
 
 	private List<Step> results;
 
-	private CmdUtil cmd=new CmdUtil(null);
+	private CmdUtil cmdUtil=new CmdUtil(null);
 
-	private static int screenIndex=0;
+	//当前年月日时间
+	public static String currentTime=new SimpleDateFormat("yyyyMMdd").format(new Date());
 
-	private static int MAX_SCREENSHOT_COUNT=9;
+	//单次任务保存截图的index
+	private int screenIndex=0;
+
+	//单次任务最多保存截图的上限
+	private int MAX_SCREENSHOT_COUNT=15;
+
+	//当前任务的序号
+	public static int taskId=0;
 
 	// 截图文件路径
-	public static final String SCREENSHOT_PATH = (System.getProperty("user.dir")
-			+ File.separator + "results/screenshots/").replace("\\","/");
+	public static String SCREENSHOT_PATH = (System.getProperty("user.dir")
+			+ File.separator + "results/%s/screenshots/%s/").replace("\\","/");
 
 	//默认的等待控件时间
 	private static int WAIT_TIME = 10;
@@ -62,21 +74,27 @@ public class OperateAppium {
 		this.width=this.getScreenWidth();
 		this.height=this.getScreenHeight();
 
-
 		this.udid=driver.getCapabilities().getCapability("deviceName").toString();
 
-		logger.info("udid:{}",udid);
-	}
+		logger.info("当前设备号 udid:{}",udid);
 
+
+		//截图地址加上当前时间，当前的执行taskid
+		SCREENSHOT_PATH=String.format(SCREENSHOT_PATH,currentTime,taskId);
+
+		logger.info("保存截图的位置为:{}",SCREENSHOT_PATH);
+
+		taskId++;
+
+	}
 
 	public int getMaxScreenshotCount() {
 		return MAX_SCREENSHOT_COUNT;
 	}
 
-	public int setMaxScreenShotCount(int count){
+	public int getTaskId() {
 
-		return MAX_SCREENSHOT_COUNT=count;
-
+		return taskId-1;
 	}
 
 	/**
@@ -124,10 +142,10 @@ public class OperateAppium {
 
 		String preImageFileName =path;
 
-		cmd.run(CmdConfig.SCREEN_CAP.replaceAll("#udid#", this.udid));
+		cmdUtil.run(CmdConfig.SCREEN_CAP.replaceAll("#udid#", this.udid));
 
 		logger.info("开始传输------");
-		cmd.run(CmdConfig.PULL_SCREENSHOT.replaceAll("#udid#",
+		cmdUtil.run(CmdConfig.PULL_SCREENSHOT.replaceAll("#udid#",
 				this.udid).replaceAll("#path2png#",
 				preImageFileName));
 		logger.info("传输本地完成------");
@@ -516,7 +534,7 @@ public class OperateAppium {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 System.out.println (OperateAppium.SCREENSHOT_PATH);
+		 System.out.println (OperateAppium.currentTime);
 
 	}
 

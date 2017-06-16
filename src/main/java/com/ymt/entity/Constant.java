@@ -9,7 +9,8 @@ public class Constant {
 
     private static final String ROOT = System.getProperty("user.dir");
 
-    public static File getScreenshotPath(){return new File(ROOT, "results/screenshots/");}
+    public static File getResultPath(){return new File(ROOT, "results/");}
+
 
     public static File getMinicap() {
         return new File(ROOT, "minicap");
@@ -27,7 +28,8 @@ public class Constant {
 
     public static void main(String args[]){
 
-        System.out.print(Constant.getScreenshotPath().getAbsolutePath());
+        System.out.println(Constant.getResultPath().getAbsolutePath());
+        System.out.print(Constant.getResultPath().getPath());
 
     }
 }

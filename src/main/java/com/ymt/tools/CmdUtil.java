@@ -25,6 +25,15 @@ public class CmdUtil {
 
     }
 
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
     /**
      * 调用并执行控制台命令
      *
@@ -112,18 +121,11 @@ public class CmdUtil {
 
     public static void main(String args[]) {
 
-        //new CmdUtil().getUdid(CmdConfig.UUID_ANDROID);
-        //logger.info("cmd return : {}", uuid);
-
-        //logger.info("result : {}",new CmdUtil().run("taskkill /im appium"));
-
-        //new CmdUtil("94fabcfa").runAdbCmd("start-server");
         CmdUtil cmd = new CmdUtil(null);
 
         cmd.run("taskkill /f /t /im cmd.exe");
         cmd.run("taskkill /f /t /im adb.exe");
         cmd.run("taskkill /f /t /im conhost.exe");
-
 
 
     }

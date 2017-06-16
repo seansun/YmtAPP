@@ -28,8 +28,6 @@ public class Traveler {
     // 随机数生成器
     public Random random = new Random(seed);
 
-    public List<AndroidElement> androidElementList = null;
-
     public List<String> xpathList = null;
 
     public OperateAppium operateAppium;
@@ -84,6 +82,8 @@ public class Traveler {
 
         } finally {
 
+            getLog();
+
             record.setPageCount(pageCount);
 
             record.setResults(results);
@@ -93,6 +93,7 @@ public class Traveler {
             new Report().generateReport(record, "YMT", operateAppium.getMaxScreenshotCount());
 
             cleanEnv();
+
         }
     }
 
@@ -408,7 +409,9 @@ public class Traveler {
 
         logger.info("当前页面过滤掉不能点击的元素后可操作元素大小为:{}", pageAttributes.size());
 
-        if (pageAttributes.size() > 0) flag = true;
+        if (pageAttributes.size() > 0) {
+            flag = true;
+        }
 
         return flag;
     }
@@ -514,10 +517,13 @@ public class Traveler {
     }
 
 
+    public void getLog() {
+    }
+
+
     public static void main(String... args) {
 
         Traveler traveler = new AndroidTraveler();
-
 
         boolean result = traveler.start();
 
