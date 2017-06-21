@@ -528,11 +528,11 @@ public class Traveler {
         boolean result = traveler.start();
 
 
-/*        while (result) {
+        while (result) {
 
             result = traveler.start();
 
-        }*/
+        }
 
 
     }

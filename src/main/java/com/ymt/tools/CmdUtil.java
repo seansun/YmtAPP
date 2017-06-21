@@ -54,6 +54,19 @@ public class CmdUtil {
      * @param cmd 控制台命令
      * @return output
      */
+    public String runAdbShell(String cmd) {
+
+        String adbCmd = String.format("adb -s %s shell %s",this.deviceId, cmd);
+
+        return this.run(adbCmd);
+    }
+
+    /**
+     * 调用并执行控制台命令
+     *
+     * @param cmd 控制台命令
+     * @return output
+     */
     public String run(String cmd) {
         String line;
         String cmdOut = "";

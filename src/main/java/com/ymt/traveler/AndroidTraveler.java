@@ -7,6 +7,7 @@ import com.ymt.operation.OperateAppium;
 import com.ymt.tools.AdbUtils;
 import com.ymt.tools.FileUtil;
 import io.appium.java_client.android.AndroidDriver;
+import org.apache.commons.collections.CollectionUtils;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.util.Collections;
 import java.util.List;
 import java.util.OptionalInt;
 
@@ -44,7 +46,6 @@ public class AndroidTraveler extends Traveler {
         String appActivity = androidCapability.getAppActivity();
 
         String appPackage = androidCapability.getAppPackage();
-
 
         AdbUtils adbUtils = new AdbUtils();
 
@@ -115,9 +116,12 @@ public class AndroidTraveler extends Traveler {
 
         }
 
-        record.setAppInfo(appPackage);
+        AdbUtils adbUtils2 = new AdbUtils(deviceName);
 
-        record.setDeviceName(deviceName);
+
+        record.setAppInfo(String.format("appPackageName:%s,appVersion:%s",appPackage,adbUtils2.getAppVersion(appPackage)));
+
+        record.setDeviceName(String.format("deviceName:%s,systemVersion:%s,resolution:%s",adbUtils2.getDeviceName(),adbUtils2.getAndroidVersion(),adbUtils2.getScreenResolution()));
 
     }
 
@@ -139,7 +143,7 @@ public class AndroidTraveler extends Traveler {
 
         StringBuilder sbApp = new StringBuilder();
 
-        sbApp.append(String.format("**********appium.log最后%s行日志**********<br/>\n", lastLineNum));
+        sbApp.append(String.format("**********appium log最后%s行日志**********<br/>\n", lastLineNum));
         appiumLog.forEach(s -> {
             sbApp.append(s);
             sbApp.append("<br/>");
@@ -151,11 +155,15 @@ public class AndroidTraveler extends Traveler {
         List<String> adbLog2 = FileUtil.readLastNLine(new File(adbLogPath), lastLineNum);
 
         StringBuilder sbAdb = new StringBuilder();
-        sbAdb.append("**********adb log日志**********<br/>\n");
-        adbLog.forEach(s -> {
-            sbAdb.append(s);
-            sbAdb.append("<br/>");
-        });
+
+        if (!CollectionUtils.isEmpty(adbLog)){
+            sbAdb.append("**********adb log日志**********<br/>\n");
+            adbLog.forEach(s -> {
+                sbAdb.append(s);
+                sbAdb.append("<br/>");
+            });
+        }
+
         sbAdb.append(String.format("**********adb log最后%s行日志**********<br/>\n", lastLineNum));
         adbLog2.forEach(s -> {
             sbAdb.append(s);

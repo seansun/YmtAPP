@@ -21,8 +21,6 @@ import java.util.concurrent.*;
 
 public class OperateAppium {
 
-
-
 	private static final Logger logger = LoggerFactory.getLogger(OperateAppium.class);
 
 	private AndroidDriver driver;

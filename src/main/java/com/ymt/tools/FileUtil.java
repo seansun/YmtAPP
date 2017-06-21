@@ -138,7 +138,7 @@ public class FileUtil {
                         //使用readLine获取当前行
                         String line = fileRead.readLine().trim() + "\n";
 
-                        if (line.contains("crash")||line.contains("System.err")) {
+                        if (line.contains("crash") || line.contains("System.err")) {
 
                             result.add(line);
 
@@ -148,6 +148,8 @@ public class FileUtil {
                     }
                 }
             }
+        } catch (NullPointerException e) {
+
         } catch (Exception e) {
             //e.printStackTrace();
             logger.error("读取日志文件异常{}", e);
