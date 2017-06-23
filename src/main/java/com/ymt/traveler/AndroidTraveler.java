@@ -5,6 +5,7 @@ import com.ymt.entity.Constant;
 import com.ymt.entity.Device;
 import com.ymt.operation.OperateAppium;
 import com.ymt.tools.AdbUtils;
+import com.ymt.tools.CmdUtil;
 import com.ymt.tools.FileUtil;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.collections.CollectionUtils;
@@ -16,10 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.util.Collections;
 import java.util.List;
-import java.util.OptionalInt;
 
 /**
  * Created by sunsheng on 2017/5/26.
@@ -28,6 +26,7 @@ public class AndroidTraveler extends Traveler {
 
     private static final Logger logger = LoggerFactory.getLogger(AndroidTraveler.class);
 
+    private AdbUtils adbUtils;
 
     private AndroidCapability androidCapability;
 
@@ -39,7 +38,9 @@ public class AndroidTraveler extends Traveler {
 
 
     @Override
-    public void setupAppium() {
+    public void setupDriver() {
+
+        super.setupDriver();
 
         List<Device> deviceList = androidCapability.getDeviceNames();
 
@@ -47,9 +48,8 @@ public class AndroidTraveler extends Traveler {
 
         String appPackage = androidCapability.getAppPackage();
 
-        AdbUtils adbUtils = new AdbUtils();
-
-        List<String> activityDevices = adbUtils.getDevices();
+        //获取 Devices list
+        List<String> activityDevices = new AdbUtils().getDevices();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -81,6 +81,7 @@ public class AndroidTraveler extends Traveler {
             }
 
         }
+
         capabilities.setCapability("deviceName", deviceName);
         capabilities.setCapability("platformVersion", platformVersion);
 
@@ -101,7 +102,11 @@ public class AndroidTraveler extends Traveler {
             driver = new AndroidDriver(new URL(url),
                     capabilities);
 
+
             operateAppium = new OperateAppium(driver, results);
+
+
+            adbUtils = new AdbUtils(deviceName);
 
             //抓取adb logcat 日志
             adbUtils.start();
@@ -116,17 +121,14 @@ public class AndroidTraveler extends Traveler {
 
         }
 
-        AdbUtils adbUtils2 = new AdbUtils(deviceName);
+        record.setAppInfo(String.format("appPackageName %s,appVersion %s", appPackage, adbUtils.getAppVersion(appPackage)));
 
-
-        record.setAppInfo(String.format("appPackageName:%s,appVersion:%s",appPackage,adbUtils2.getAppVersion(appPackage)));
-
-        record.setDeviceName(String.format("deviceName:%s,systemVersion:%s,resolution:%s",adbUtils2.getDeviceName(),adbUtils2.getAndroidVersion(),adbUtils2.getScreenResolution()));
+        record.setDeviceName(String.format("deviceName %s,systemVersion %s,resolution %s", adbUtils.getDeviceName(), adbUtils.getAndroidVersion(), adbUtils.getScreenResolution()));
 
     }
 
     /***
-     * 提取appium,adb 日志
+     * android 提取appium,adb 日志
      */
     @Override
     public void getLog() {
@@ -156,7 +158,7 @@ public class AndroidTraveler extends Traveler {
 
         StringBuilder sbAdb = new StringBuilder();
 
-        if (!CollectionUtils.isEmpty(adbLog)){
+        if (!CollectionUtils.isEmpty(adbLog)) {
             sbAdb.append("**********adb log日志**********<br/>\n");
             adbLog.forEach(s -> {
                 sbAdb.append(s);
@@ -177,6 +179,27 @@ public class AndroidTraveler extends Traveler {
 
     }
 
+    /**
+     *
+     */
+    @Override
+    public void beforeTravel() {
+
+        super.beforeTravel();
+
+        adbUtils.delTmpScreenFile();
+
+    }
+
+    /**
+     * 清理环境
+     */
+    @Override
+    public void cleanEnv() {
+
+        adbUtils.killAdb();
+
+    }
 
     public static void main(String... args) {
 

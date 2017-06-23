@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * Created by sunsheng on 2017/4/14.
@@ -16,25 +18,26 @@ public class YamlUtil {
     private static final Logger logger = LoggerFactory.getLogger(YamlUtil.class);
 
 
-    public static Config loadYaml(){
+    public static Config loadYaml() {
 
-        File confFile=new File(System.getProperty("user.dir")+File.separator + "src/main/resources/config.yml");
+        //File confFile = new File(System.getProperty("user.dir") + File.separator + "src/main/resources/config.yml");
 
+        InputStream inputStream = (YamlUtil.class.getResourceAsStream("/config.yml"));
 
-        logger.info(confFile.getAbsolutePath());
+        //logger.info(confFile.getAbsolutePath());
 
-        Config config= null;
+        Config config = null;
 
         try {
             //config = (Config) Yaml.loadType(confFile, Config.class);
-            YamlReader reader =  new YamlReader(new FileReader(confFile.getAbsolutePath()));
-            config=reader.read(Config.class);
+            YamlReader reader = new YamlReader(new InputStreamReader(inputStream));
+            config = reader.read(Config.class);
 
 
         } catch (Exception e) {
 
             e.printStackTrace();
-            logger.error("解析ymal 配置文件异常 {}",e);
+            logger.error("解析ymal 配置文件异常 {}", e);
 
         }
 
@@ -44,18 +47,16 @@ public class YamlUtil {
     }
 
 
-    public static  void main(String args[]){
+    public static void main(String args[]) {
 
-        Config config= YamlUtil.loadYaml();
+        Config config = YamlUtil.loadYaml();
 
-        logger.info("{}",config.getBlackList());
+        logger.info("{}", config.getBlackList());
 
-        logger.info("{}",config.getTriggerActions().get(0).getTriggerCondition());
-        logger.info("devices:{}",config.getAndroidCapability().getDeviceNames().size());
+        logger.info("{}", config.getTriggerActions().get(1).getTriggerCondition());
+        logger.info("devices:{}", config.getAndroidCapability().getDeviceNames().size());
 
     }
-
-
 
 
 }

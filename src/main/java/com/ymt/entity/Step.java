@@ -6,7 +6,8 @@ package com.ymt.entity;
 public class Step {
 
     private String action;
-    private String screenShot;
+    //adb 手机截图文件名
+    private String screenShotName;
     private String elementName;
 
     private String result;
@@ -33,12 +34,12 @@ public class Step {
         this.action = action;
     }
 
-    public String getScreenShot() {
-        return screenShot;
+    public String getScreenShotName() {
+        return screenShotName;
     }
 
-    public void setScreenShot(String screenShot) {
-        this.screenShot = screenShot;
+    public void setScreenShotName(String screenShotName) {
+        this.screenShotName = screenShotName;
     }
 
     public String getElementName() {

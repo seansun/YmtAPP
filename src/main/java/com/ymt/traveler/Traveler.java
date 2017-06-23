@@ -51,10 +51,11 @@ public class Traveler {
 
         loadConfig();
 
-        setupEnv();
-
     }
 
+    /**
+     * 加载yaml 配置文件
+     */
     public void loadConfig() {
 
         config = YamlUtil.loadYaml();
@@ -65,7 +66,10 @@ public class Traveler {
 
     }
 
-    public void setupAppium() {
+    public void setupDriver() {
+
+        startAppiumServer();
+
 
     }
 
@@ -82,13 +86,13 @@ public class Traveler {
 
         } finally {
 
+            record.setDuringTime(String.format("%s s", (System.currentTimeMillis() - beginTime) / 1000));
+
             getLog();
 
             record.setPageCount(pageCount);
 
             record.setResults(results);
-
-            record.setDuringTime(String.format("%s s", (System.currentTimeMillis() - beginTime) / 1000));
 
             new Report().generateReport(record, "YMT", operateAppium.getMaxScreenshotCount());
 
@@ -113,39 +117,16 @@ public class Traveler {
 
         try {
 
-            setupAppium();
+            setupDriver();
 
             beforeTravel();
-
-            AndroidElement skip = operateAppium.waitAutoById("com.ymatou.shop:id/tv_follow_button_state", 3);
-
-            if (null != skip) {
-
-                skip.click();
-
-                driver.pressKeyCode(4);
-
-            }
-
-            AndroidElement cancel = operateAppium.waitAutoById("com.ymatou.shop:id/tv_home_coupon_dialog_cancel", 3);
-
-            if (cancel != null)
-                cancel.click();
-
-            try {
-                Thread.sleep(2000);
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                logger.error("error:{}", e.getStackTrace());
-            }
 
             logger.debug("Current PageSource:{}", driver.getPageSource());
 
             //主页面 activity name
-            String mainActivityString = driver.currentActivity();
+            String mainActivity = driver.currentActivity();
 
-            logger.info("mainActivityString:{}", mainActivityString);
+            logger.info("主界面 mainActivity:{}", mainActivity);
 
             while (true) {
 
@@ -178,11 +159,9 @@ public class Traveler {
 
     }
 
-    /*	*
-     *
+    /**
      * 刷新页面
-     *
-    */
+     */
     private boolean refreshPage() {
 
         boolean isSuccess = true;
@@ -201,7 +180,6 @@ public class Traveler {
                 if (null == pageSource) {
 
                     //android 解析失败，重新尝试 launch app
-                    //driver.launchApp();
                     setPageAction(Action.LAUNCHAPP);
                     logger.info("driver:{} ,解析 pageSource超时,pageSource为null", driver);
                     return false;
@@ -243,6 +221,10 @@ public class Traveler {
 
                 if (!appName.equals("com.ymatou.shop")) {
 
+                    afterTravel();
+
+                    System.exit(-1);
+
                     setPageAction(Action.BACKAPP);
 
                     logger.info("currentActivity: {},appName:{} ", appName, driver.currentActivity());
@@ -263,7 +245,9 @@ public class Traveler {
         return isSuccess;
     }
 
-
+    /**
+     * android 统计页面 activity 访问次数
+     */
     private void getPageInfo() {
 
         String pageUrl = driver.currentActivity();
@@ -277,11 +261,9 @@ public class Traveler {
 
     }
 
-    /*	*
-     *
+    /**
      * 随机动作
-     *
-    */
+     */
     private AndroidElement beforeAction() {
 
         AndroidElement element = null;
@@ -317,9 +299,11 @@ public class Traveler {
     }
 
     /**
-     * 设置
+     * 启动appium server 服务
      */
-    public void setupEnv() {
+    public void startAppiumServer() {
+
+        logger.info("启动appium server 服务");
 
         new AppiumServer("appium").start();
 
@@ -334,19 +318,7 @@ public class Traveler {
     /**
      * 清理环境
      */
-    private static void cleanEnv() {
-
-        CmdUtil cmd = new CmdUtil(null);
-
-        cmd.run("taskkill /f /t /im cmd.exe");
-        cmd.run("taskkill /f /t /im adb.exe");
-        cmd.run("taskkill /f /t /im conhost.exe");
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void cleanEnv() {
 
     }
 
@@ -416,14 +388,16 @@ public class Traveler {
         return flag;
     }
 
-
+    /**
+     * 获取下一个随机动作
+     *
+     * @return
+     */
     private String getNextAction() {
 
         String nextAction = null;
 
         int action = Math.abs(random.nextInt() % 19);
-
-        //int action =6;
 
         switch (action) {
 
@@ -452,25 +426,31 @@ public class Traveler {
 
     }
 
-
+    /**
+     * 设置页面随机动作
+     */
     public void setPageAction(String action) {
 
         currentPageAction = action;
 
-
     }
 
+    /**
+     * 获取页面随机动作
+     */
     public String getPageAction() {
 
         return currentPageAction;
     }
 
-
+    /**
+     * 解析配置文件的触发动作
+     */
     public boolean triggerProcessing(XmlParser xmlParser) {
 
         boolean result = false;
 
-        if (null == xmlParser) return result;
+        if (null == xmlParser) return false;
 
         List<TriggerAction> triggerActionList = config.getTriggerActions();
 
@@ -494,9 +474,6 @@ public class Traveler {
 
                     String action = operate.getAction();
 
-                    //String elementXpath = operate.getXpath();
-
-
                     if (action.equalsIgnoreCase(Action.DOBACK)) {
 
                         logger.info("triggerProcessing DOBACK");
@@ -506,6 +483,20 @@ public class Traveler {
                         result = true;
 
                     }
+                    if (action.equalsIgnoreCase(Action.CLICK)) {
+
+                        logger.info("triggerProcessing CLICK");
+
+                        AndroidElement element = operateAppium.waitAutoByXp(operate.getXpath(), 1);
+
+                        if (element != null) {
+
+                            element.click();
+                        }
+                        result = true;
+
+                    }
+
 
                 }
 

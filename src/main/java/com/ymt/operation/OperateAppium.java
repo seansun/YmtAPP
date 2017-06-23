@@ -1,8 +1,8 @@
 package com.ymt.operation;
 
 import com.ymt.entity.Action;
-import com.ymt.entity.CmdConfig;
 import com.ymt.entity.Step;
+import com.ymt.tools.AdbUtils;
 import com.ymt.tools.CmdUtil;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -21,134 +21,125 @@ import java.util.concurrent.*;
 
 public class OperateAppium {
 
-	private static final Logger logger = LoggerFactory.getLogger(OperateAppium.class);
+    private static final Logger logger = LoggerFactory.getLogger(OperateAppium.class);
 
-	private AndroidDriver driver;
+    private AndroidDriver driver;
 
-	private String udid;
+    public static String udid;
 
-	private List<Step> results;
+    private List<Step> results;
 
-	private CmdUtil cmdUtil=new CmdUtil(null);
+    private AdbUtils adbUtils;
 
-	//当前年月日时间
-	public static String currentTime=new SimpleDateFormat("yyyyMMdd").format(new Date());
+    //当前年月日时间
+    public static String currentTime = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
-	//单次任务保存截图的index
-	private int screenIndex=0;
+    //单次任务保存截图的index
+    private int screenIndex = 0;
 
-	//单次任务最多保存截图的上限
-	private int MAX_SCREENSHOT_COUNT=15;
+    //单次任务最多保存截图的上限
+    private int MAX_SCREENSHOT_COUNT = 15;
 
-	//当前任务的序号
-	public static int taskId=0;
+    //当前任务的序号
+    public static int taskId = 0;
 
-	// 截图文件路径
-	public static String SCREENSHOT_PATH = (System.getProperty("user.dir")
-			+ File.separator + "results/%s/screenshots/%s/").replace("\\","/");
+    // 截图文件路径
+    public static String SCREENSHOT_PATH = null;
 
-	//默认的等待控件时间
-	private static int WAIT_TIME = 10;
+    //默认的等待控件时间
+    private static int WAIT_TIME = 3;
 
-	//默认滑动百分比
-	private final int SWIPE_DEFAULT_PERCENT = 5;
+    //默认滑动百分比
+    private final int SWIPE_DEFAULT_PERCENT = 5;
 
-	//默认滑动持续时间500ms
-	private final int SWIPE_DURING=100;
+    //默认滑动持续时间500ms
+    private final int SWIPE_DURING = 100;
 
-	private int width;
+    public static int width;
 
-	private int height;
+    public static int height;
 
-	public OperateAppium() {
+    public OperateAppium() {
 
-	}
+    }
 
-	public OperateAppium(AndroidDriver driver, List<Step> results) {
+    public OperateAppium(AndroidDriver driver, List<Step> results) {
 
-		this.driver = driver;
-		this.results=results;
+        this.driver = driver;
+        this.results = results;
 
-		this.width=this.getScreenWidth();
-		this.height=this.getScreenHeight();
+        this.width = this.getScreenWidth();
+        this.height = this.getScreenHeight();
 
-		this.udid=driver.getCapabilities().getCapability("deviceName").toString();
+        this.udid = driver.getCapabilities().getCapability("deviceName").toString();
 
-		logger.info("当前设备号 udid:{}",udid);
+        logger.info("当前设备号 udid:{}", udid);
+
+        adbUtils = new AdbUtils(udid);
+
+        taskId++;
+
+        //截图地址加上当前时间，当前的执行taskid
+        SCREENSHOT_PATH = System.getProperty("user.dir")
+                + File.separator + String.format("results\\%s\\screenshots\\%s\\", currentTime, getTaskId());
+
+        logger.info("保存截图的位置为:{}", SCREENSHOT_PATH);
 
 
-		//截图地址加上当前时间，当前的执行taskid
-		SCREENSHOT_PATH=String.format(SCREENSHOT_PATH,currentTime,taskId);
+    }
 
-		logger.info("保存截图的位置为:{}",SCREENSHOT_PATH);
+    public int getMaxScreenshotCount() {
+        return MAX_SCREENSHOT_COUNT;
+    }
 
-		taskId++;
+    public int getTaskId() {
 
-	}
+        return taskId;
+    }
 
-	public int getMaxScreenshotCount() {
-		return MAX_SCREENSHOT_COUNT;
-	}
+    /**
+     * 显示等待，等待Id对应的控件出现time秒，一出现马上返回，time秒不出现也返回
+     */
+    public AndroidElement waitAuto(By by, int time) {
+        try {
+            return new AndroidDriverWait(driver, time)
+                    .until(new ExpectedCondition<AndroidElement>() {
+                        @Override
+                        public AndroidElement apply(AndroidDriver androidDriver) {
+                            return (AndroidElement) androidDriver.findElement(by);
+                        }
+                    });
+        } catch (TimeoutException e) {
 
-	public int getTaskId() {
+            logger.warn("查找元素超时!!{}秒之后还没找到元素 [{}]", time, by.toString());
 
-		return taskId-1;
-	}
+            return null;
 
-	/**
-	 * 显示等待，等待Id对应的控件出现time秒，一出现马上返回，time秒不出现也返回
-	 */
-	public AndroidElement waitAuto(By by, int time) {
-		try {
-			return new AndroidDriverWait(driver, time)
-					.until(new ExpectedCondition<AndroidElement>() {
-						@Override
-						public AndroidElement apply(AndroidDriver androidDriver) {
-							return (AndroidElement) androidDriver.findElement(by);
-						}
-					});
-		} catch (TimeoutException e) {
+        }
+    }
 
-			logger.warn("查找元素超时!!{}秒之后还没找到元素 [{}]",time,by.toString());
+    public AndroidElement waitAutoById(String id) {
+        return waitAutoById(id, WAIT_TIME);
+    }
 
-			return null;
+    public AndroidElement waitAutoById(String id, int time) {
+        return waitAuto(By.id(id), time);
+    }
 
-		}
-	}
+    public AndroidElement waitAutoByXp(String xPath) {
+        return waitAutoByXp(xPath, WAIT_TIME);
+    }
 
-	public AndroidElement waitAutoById(String id) {
-		return waitAutoById(id, WAIT_TIME);
-	}
+    public AndroidElement waitAutoByXp(String xPath, int time) {
+        return waitAuto(By.xpath(xPath), time);
+    }
 
-	public AndroidElement waitAutoById(String id, int time) {
-		return waitAuto(By.id (id), time);
-	}
+    /**
+     * 截图
+     */
+    public void screenShot(String fileName) {
 
-	public AndroidElement waitAutoByXp(String xPath) {
-		return waitAutoByXp(xPath, WAIT_TIME);
-	}
-
-	public AndroidElement waitAutoByXp(String xPath, int time) {
-		return waitAuto(By.xpath(xPath), time);
-	}
-
-	/**
-	 *
-	 * 截图
-	 */
-	public String screenShot(String path) {
-
-		String preImageFileName =path;
-
-		cmdUtil.run(CmdConfig.SCREEN_CAP.replaceAll("#udid#", this.udid));
-
-		logger.info("开始传输------");
-		cmdUtil.run(CmdConfig.PULL_SCREENSHOT.replaceAll("#udid#",
-				this.udid).replaceAll("#path2png#",
-				preImageFileName));
-		logger.info("传输本地完成------");
-
-		//FileUtils.waitFor(new File(preImageFileName),2);
+        adbUtils.screencap(fileName);
 
 /*		File file= driver.getScreenshotAs (OutputType.FILE);
 
@@ -162,378 +153,345 @@ public class OperateAppium {
 
 		}*/
 
-		screenIndex++;
+        screenIndex++;
 
-		if (screenIndex>MAX_SCREENSHOT_COUNT) screenIndex=0;
+        if (screenIndex > MAX_SCREENSHOT_COUNT) screenIndex = 0;
 
-		return preImageFileName;
+    }
 
-	}
+    /**
+     * 获取屏幕宽度
+     *
+     * @return
+     */
+    public int getScreenWidth() {
+        return driver.manage().window().getSize().getWidth();
+    }
 
-	/**
-	 * 截图 ，处理图片添加文字
-	 */
-	public String  markPicText(String text,int x,int y){
+    /**
+     * 获取屏幕高度
+     *
+     * @return
+     */
+    public int getScreenHeight() {
+        return driver.manage().window().getSize().getHeight();
+    }
 
+    /**
+     * 元素点击
+     */
+    public void click(AndroidElement element) {
 
-		String psPathFileName = (SCREENSHOT_PATH+ screenIndex+".ori.png");
+        String result = "pass";
+        Step step = new Step();
+        String screenShotName = null;
 
-		screenShot (psPathFileName);
+        try {
 
-		//String psPathFileName = getScreenPath ()+ getScreenIndex ()+".ps.jpg";
+            Point location = element.getLocation();
 
-		//file.renameTo(file)
+            int x = location.getX();
+            int y = location.getY();
 
-/*
-		BufferedImage img=null;
-		try {
-			img=ImageIO.read (file);
+            Dimension size = element.getSize();
 
-		} catch (IOException e) {
-			e.printStackTrace ();
+            int w = size.getWidth();
+            int h = size.getHeight();
 
-			logger.error("读取截图文件 {}",e);
+            step.setX(x);
+            step.setY(y);
+            step.setW(w);
+            step.setH(h);
 
-		}
+            logger.info("随机点击控件tagName :{} ", element.getTagName());
+            logger.info("随机点击控件Location :{} ", element.getLocation());
 
-		Graphics2D graph=img.createGraphics ();
+            screenShotName = "screenShot" + screenIndex;
 
-		graph.setStroke (new BasicStroke (5));
-		graph.setColor (Color.red);
-		graph.setFont(new Font("Serif",Font.PLAIN,120));
-		graph.drawString(text,x,y);
-		graph.dispose ();
+            //截图
+            screenShot(screenShotName);
 
-		//生成ps处理后图片
-		generatePsPic(img,psPathFileName);
+            logger.info("点击截图:{}", screenShotName);
 
-		//删掉原始图片
-		FileUtils.deleteQuietly(new File(preImageFileName));*/
-		logger.info("滑动的截图:{}",psPathFileName);
-		return psPathFileName;
-	}
 
-	/**
-	 * 获取屏幕宽度
-	 *
-	 * @return
-	 */
-	public int getScreenWidth() {
-		return driver.manage().window().getSize().getWidth();
-	}
+        } catch (Exception e) {
 
-	/**
-	 * 获取屏幕高度
-	 *
-	 * @return
-	 */
-	public int getScreenHeight() {
-		return driver.manage().window().getSize().getHeight();
-	}
-	/**
-	 * 元素点击
-	 */
-	public void click(AndroidElement element){
+            logger.error("截图失败:{}", e);
 
-		String result="pass";
-		Step step=new Step();
-		String screenShotPath=null;
+            screenShotName = null;
 
-		try{
+            step.setResult(String.format("截图失败 %s", e.getStackTrace().toString()));
+        }
 
-			Point location = element.getLocation ();
+        step.setElementName(element.getTagName());
 
-			int x = location.getX ();
-			int y = location.getY ();
+        step.setAction("Click");
 
-			Dimension size = element.getSize ();
+        step.setScreenShotName(screenShotName);
 
-			int w = size.getWidth ();
-			int h = size.getHeight ();
+        try {
+            element.click();
+        } catch (Exception e) {
 
-			step.setX(x);
-			step.setY(y);
-			step.setW(w);
-			step.setH(h);
+            logger.error("Click element :{} error :{}", element, e);
 
-			logger.info("随机点击控件tagName :{} ",element.getTagName());
-			logger.info("随机点击控件Location :{} ",element.getLocation());
+            step.setResult((CmdUtil.isWindows() ? "//r//n" : "//r") + e.getStackTrace().toString());
 
+            result = "fail";
+        }
 
-			screenShotPath = (SCREENSHOT_PATH+ screenIndex+".ori.png");
+        step.setResult(result);
 
-			//截图
-			screenShot (screenShotPath);
+        results.add(step);
 
-			logger.info("点击截图:{}",screenShotPath);
+    }
 
 
-		}
-		catch (Exception e){
+    public void swipeToUp(int during) {
+        swipeToUp(during, SWIPE_DEFAULT_PERCENT);
+    }
 
-			logger.error("截图失败:{}",e);
+    /**
+     * 向上滑动，
+     *
+     * @param during
+     */
+    public void swipeToUp(int during, int percent) {
+        int width = this.width;
+        int height = this.height;
+        driver.swipe(width / 2, height * (percent - 1) / percent, width / 2, height / percent, during);
+    }
+
+    public void swipeToDown(int during) {
+        swipeToDown(during, SWIPE_DEFAULT_PERCENT);
+
+    }
+
+    public void swipeToLeft(int during) {
+        swipeToLeft(during, SWIPE_DEFAULT_PERCENT);
 
-			screenShotPath=null;
+
+    }
 
-			step.setResult(String.format("截图失败 %s",e.getStackTrace().toString()));
-		}
+    /**
+     * 向下滑动，
+     *
+     * @param during 滑动时间
+     */
+    public void swipeToDown(int during, int percent) {
+        int width = this.width;
+        int height = this.height;
+        driver.swipe(width / 2, height / percent, width / 2, height * (percent - 1) / percent, during);
+    }
 
-		step.setElementName(element.getTagName());
 
-		step.setAction("Click");
+    /**
+     * 向左滑动，
+     *
+     * @param during  滑动时间
+     * @param percent 位置的百分比，2-10， 例如3就是 从2/3滑到1/3
+     */
+    public void swipeToLeft(int during, int percent) {
+        int width = this.width;
+        int height = this.height;
+        driver.swipe(width * (percent - 1) / percent, height / 2, width / percent, height / 2, during);
+    }
 
-		step.setScreenShot(screenShotPath);
 
-		try {
-			element.click();
-		}
-		catch (Exception e){
+    public void swipeToRight(int during) {
+        swipeToRight(during, SWIPE_DEFAULT_PERCENT);
+    }
 
-			logger.error("Click element :{} error :{}",element,e);
+    /**
+     * 向右滑动，
+     *
+     * @param during  滑动时间
+     * @param percent 位置的百分比，2-10， 例如3就是 从1/3滑到2/3
+     */
+    public void swipeToRight(int during, int percent) {
+        int width = this.width;
+        int height = this.height;
+        driver.swipe(width / percent, height / 2, width * (percent - 1) / percent, height / 2, during);
+    }
+
+    /**
+     * 在某个方向上滑动
+     *
+     * @param direction 方向，UP DOWN LEFT RIGHT
+     * @param duration  持续时间
+     */
+    public void swip(String direction, int duration) {
 
-			step.setResult((CmdUtil.isWindows()?"//r//n":"//r")+e.getStackTrace().toString());
+        String result = "pass";
 
-			result="fail";
-		}
+        Step step = new Step();
 
-		step.setResult(result);
+        try {
+
+            switch (direction) {
+                case Action.SWIP_UP:
+                    swipeToUp(duration);
+                    break;
+                case Action.SWIP_DOWN:
+                    swipeToDown(duration);
+                    break;
+                case Action.SWIP_LEFT:
+                    swipeToLeft(duration);
+                    break;
+                case Action.SWIP_RIGHT:
+                    swipeToRight(duration);
+                    break;
+            }
+        } catch (Exception e) {
+
+            logger.error("swip {} error : e", direction, e);
 
-		results.add(step);
-
-	}
+            result = "fail";
 
+            step.setResult(e.getStackTrace().toString());
 
-	public void swipeToUp(int during) {
-		swipeToUp(during, SWIPE_DEFAULT_PERCENT);
-	}
+        }
+
+        String screenShotName = null;
 
-	/**
-	 * 向上滑动，
-	 *
-	 * @param during
-	 */
-	public void swipeToUp(int during, int percent) {
-		int width = this.width;
-		int height = this.height;
-		driver.swipe(width / 2, height * (percent - 1) / percent, width / 2, height / percent, during);
-	}
+        logger.info(" {} : {} ,duration {}", driver.currentActivity(), direction, duration);
 
-	public void swipeToDown(int during) {
-		swipeToDown(during, SWIPE_DEFAULT_PERCENT);
+        try {
 
-	}
+            screenShotName = "screenShot" + screenIndex;
 
-	public void swipeToLeft(int during) {
-		swipeToLeft(during, SWIPE_DEFAULT_PERCENT);
+            //截图
+            screenShot(screenShotName);
 
+            logger.info("点击截图:{}", screenShotName);
 
-	}
-	/**
-	 * 向下滑动，
-	 *
-	 * @param during 滑动时间
-	 */
-	public void swipeToDown(int during, int percent) {
-		int width = this.width;
-		int height = this.height;
-		driver.swipe(width / 2, height / percent, width / 2, height * (percent - 1) / percent, during);
-	}
+        } catch (Exception e) {
 
+            logger.error("截图失败:{}", e);
 
-	/**
-	 * 向左滑动，
-	 *
-	 * @param during  滑动时间
-	 * @param percent 位置的百分比，2-10， 例如3就是 从2/3滑到1/3
-	 */
-	public void swipeToLeft(int during, int percent) {
-		int width = this.width;
-		int height = this.height;
-		driver.swipe(width * (percent - 1) / percent, height / 2, width / percent, height / 2, during);
-	}
+            screenShotName = null;
 
+            step.setResult(String.format("截图失败 %s", e.getStackTrace().toString()));
+        }
 
-	public void swipeToRight(int during) {
-		swipeToRight(during, SWIPE_DEFAULT_PERCENT);
-	}
+        step.setElementName("Page");
+        step.setAction(direction);
+        step.setScreenShotName(screenShotName);
+        step.setResult(result);
 
-	/**
-	 * 向右滑动，
-	 *
-	 * @param during  滑动时间
-	 * @param percent 位置的百分比，2-10， 例如3就是 从1/3滑到2/3
-	 */
-	public void swipeToRight(int during, int percent) {
-		int width = this.width;
-		int height =this.height;
-		driver.swipe(width / percent, height / 2, width * (percent - 1) / percent, height / 2, during);
-	}
+        results.add(step);
 
-	/**
-	 * 在某个方向上滑动
-	 *
-	 * @param direction 方向，UP DOWN LEFT RIGHT
-	 * @param duration  持续时间
-	 */
-	public void swip(String direction, int duration) {
+    }
 
-		String result="pass";
+    /**
+     * 操作方法
+     */
+    public void doElementAction(AndroidElement element, String nextAction) {
 
-		Step step=new Step();
+        logger.info("element:{},nextAction:{}", element, nextAction);
 
-		try {
+        switch (nextAction) {
 
-			switch (direction) {
-				case Action.SWIP_UP:
-					swipeToUp(duration);
-					break;
-				case Action.SWIP_DOWN:
-					swipeToDown(duration);
-					break;
-				case Action.SWIP_LEFT:
-					swipeToLeft(duration);
-					break;
-				case Action.SWIP_RIGHT:
-					swipeToRight(duration);
-					break;
-			}
-		}
-		catch (Exception e){
+            case Action.CLICK:
+                click(element);
+                break;
+            case Action.DOBACK:
+                back();
+                break;
+            case Action.BACKAPP:
+                backApp();
+                break;
+            case Action.LAUNCHAPP:
+                driver.launchApp();
+                break;
+            case Action.SKIP:
 
-			logger.error("swip {} error : e",direction,e);
+                break;
+            default:
+                swip(nextAction, SWIPE_DURING);
+                break;
+        }
 
-			result="fail";
+    }
 
-			step.setResult(e.getStackTrace().toString());
+    /**
+     * 尝试返回app
+     */
+    private void backApp() {
 
-		}
+        logger.info("back to app");
 
+        driver.navigate().back();
 
-		logger.info(" {} : {} ,duration {}",driver.currentActivity(),direction, duration);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-		//String text=String.format("%s",direction);
+    }
 
-		String screenShot=markPicText(direction,this.width/2-250,this.height/2);
+    /**
+     * 尝试后退
+     */
+    public void back() {
 
+        driver.pressKeyCode(4);
+        logger.info("返回 do back");
+        try {
+            Thread.sleep(500);
 
-		step.setElementName("Page");
-		step.setAction(direction);
-		step.setScreenShot(screenShot);
-		step.setResult(result);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-		results.add(step);
+    }
 
-	}
+    /**
+     * 获取页面pagesource 超时10s返回
+     */
+    public String getPageSource() {
 
-	/**
-	 * 操作方法
-	 */
-	public void doElementAction (AndroidElement element,String nextAction){
+        logger.info("开始获取pagesource");
 
-		logger.info("element:{},nextAction:{}",element,nextAction);
+        String source = null;
 
-		switch (nextAction) {
+        //source=driver.getPageSource();
 
-			case Action.CLICK:
-				click(element);
-				break;
-			case Action.DOBACK:
-				back();
-				break;
-			case Action.BACKAPP:
-				backApp();
-				break;
-			case Action.LAUNCHAPP:
-				driver.launchApp();
-				break;
-			case Action.SKIP:
+        final ExecutorService exec = Executors.newFixedThreadPool(1);
 
-				break;
-			default:
-				swip(nextAction, SWIPE_DURING);
-				break;
-		}
+        Callable<String> call = new Callable<String>() {
 
-	}
+            public String call() throws Exception {
+                //开始执行耗时操作
+                return driver.getPageSource();
+            }
 
-	/**
-	 * 尝试返回app
-	 */
-	private void backApp() {
+        };
+        try {
+            Future<String> future = exec.submit(call);
 
-		logger.info("back to app");
+            source = future.get(10000, TimeUnit.MILLISECONDS); //任务处理超时时间设为 10 秒
 
-		driver.navigate().back();
+            logger.debug("pagesource 返回:{}", source);
 
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+        } catch (java.util.concurrent.TimeoutException ex) {
+            logger.info("{} 获取pagesource超时");
 
-	}
+        } catch (Exception e) {
+            logger.error("获取pagesource 处理失败");
+        }
+        // 关闭线程池
+        //exec.shutdown();
+        exec.shutdownNow();
 
-	/**
-	 * 尝试后退
-	 */
-	public void back(){
+        return source;
+    }
 
-		driver.pressKeyCode(4);
-		logger.info("返回 do back");
-		try {
-			Thread.sleep(500);
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        System.out.println(OperateAppium.SCREENSHOT_PATH);
 
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	/**
-	 * 获取页面pagesource 超时10s返回
-	 */
-	public String getPageSource(){
-
-		logger.info("开始获取pagesource");
-
-		String source=null;
-
-		//source=driver.getPageSource();
-
-		final ExecutorService exec = Executors.newFixedThreadPool(1);
-
-		Callable<String> call = new Callable<String>() {
-
-			public String call() throws Exception {
-				//开始执行耗时操作
-				return driver.getPageSource();
-			}
-
-		};
-		try {
-			Future<String> future = exec.submit(call);
-
-			source = future.get(15000, TimeUnit.MILLISECONDS); //任务处理超时时间设为 10 秒
-
-			logger.debug("pagesource 返回:{}", source);
-
-		} catch (java.util.concurrent.TimeoutException ex) {
-			logger.info("{} 获取pagesource超时");
-
-		} catch (Exception e) {
-			logger.error("获取pagesource 处理失败");
-		}
-		// 关闭线程池
-		//exec.shutdown();
-		exec.shutdownNow();
-
-		return source;
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		 System.out.println (OperateAppium.currentTime);
-
-	}
+    }
 
 }

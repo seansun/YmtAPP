@@ -21,7 +21,6 @@ public class AdbUtils extends Thread {
     //单个设备，可不传入参数deviceId
     private String deviceId;
 
-
     private String findUtil = CmdUtil.isWindows() ? "findstr" : "grep";
 
 
@@ -50,7 +49,9 @@ public class AdbUtils extends Thread {
     // 获取连接的设备列表
     public List<String> getDevices() {
 
-        String cmd = String.format("adb devices|%s -v List",findUtil);
+        logger.info("获取当前活动的device列表");
+
+        String cmd = String.format("adb devices|%s -v List", findUtil);
 
         String line;
 
@@ -179,6 +180,13 @@ public class AdbUtils extends Thread {
 
     }
 
+    /**
+     * 删除tmp 下的截图文件
+     */
+    public void delTmpScreenFile(){
+
+        cmdUtil.runAdbShell("rm -r /data/local/tmp/*.png");
+    }
 
     /**
      * 获取设备屏幕分辨率，return (width, high)
@@ -210,11 +218,57 @@ public class AdbUtils extends Thread {
 
     }
 
+    /**
+     * 通过adb 截图
+     */
+    public void screencap(String fileName) {
+
+        cmdUtil.runAdbShell(String.format("/system/bin/screencap -p /data/local/tmp/%s.png", fileName));
+
+    }
+
+    /**
+     * 将截图文件从手机pull到本地
+     */
+    public void pullScreen(String filename, String computerPath) {
+
+        computerPath = computerPath.replace("\\", "/");
+
+        cmdUtil.runAdbCmd(String.format("pull /data/local/tmp/%s.png %s", filename, computerPath));
+
+    }
+
+    /**
+     * kill adb 进程
+     */
+    public void killAdb() {
+
+        cmdUtil.run("taskkill /f /t /im cmd.exe");
+        cmdUtil.run("taskkill /f /t /im adb.exe");
+        cmdUtil.run("taskkill /f /t /im conhost.exe");
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void main(String... args) {
 
-
         //new AdbUtils().start();
-        System.out.println("version:" + new AdbUtils("2bad9d02").getScreenResolution());
+        //System.out.println("version:" + new AdbUtils("2bad9d02").getScreenResolution());
+
+        AdbUtils adbUtils = new AdbUtils("2bad9d02");
+
+        for (int i = 0; i < 30; i++) {
+            //adbUtils.screencap(String.valueOf(i));
+
+            adbUtils.pullScreen("screenshot" + i, "C:\\Users\\sunsheng\\Desktop\\YmtAPP\\results\\20170622\\screenshots\\0\\" + i + ".png");
+
+        }
+
 
     }
 }

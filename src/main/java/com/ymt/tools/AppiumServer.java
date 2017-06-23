@@ -22,8 +22,11 @@ public class AppiumServer extends Thread {
 
         //主线程执行完后,改线程停止
         this.setDaemon(true);
+
+
     }
 
+    @Override
     public void run() {
 
         cmdInvoke("taskkill /f /t /im appium");

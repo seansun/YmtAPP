@@ -16,9 +16,18 @@ public class IOSTraveler extends Traveler {
 
     }
 
+    @Override
+    public void setupDriver() {
+
+        super.setupDriver();
+
+
+    }
+
 
     @Override
-    public void getLog() {}
+    public void getLog() {
+    }
 
     public static void main(String... args) {
 
