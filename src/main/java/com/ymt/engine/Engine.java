@@ -1,11 +1,14 @@
-package com.ymt.operation;
+package com.ymt.engine;
 
 import com.ymt.entity.Action;
 import com.ymt.entity.Step;
 import com.ymt.tools.AdbUtils;
 import com.ymt.tools.CmdUtil;
+import com.ymt.tools.LimitQueue;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
@@ -14,28 +17,30 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.concurrent.*;
 
-public class OperateAppium {
+public class Engine {
 
-    private static final Logger logger = LoggerFactory.getLogger(OperateAppium.class);
 
-    private AndroidDriver driver;
+    private static final Logger logger = LoggerFactory.getLogger(Engine.class);
+
+
+    public AndroidDriver driver;
 
     public static String udid;
 
-    private List<Step> results;
+    public LimitQueue<Step> results;
 
-    private AdbUtils adbUtils;
+    public AdbUtils adbUtils;
 
     //当前年月日时间
     public static String currentTime = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
     //单次任务保存截图的index
-    private int screenIndex = 0;
+    private Integer screenIndex = 1;
 
     //单次任务最多保存截图的上限
     private int MAX_SCREENSHOT_COUNT = 15;
@@ -59,17 +64,21 @@ public class OperateAppium {
 
     public static int height;
 
-    public OperateAppium() {
+    public Engine() {
 
     }
 
-    public OperateAppium(AndroidDriver driver, List<Step> results) {
+    public Engine(AndroidDriver driver, LimitQueue<Step> results) {
+
+        //设置存储操作步骤 Queue 长度
+        results.setLimit(MAX_SCREENSHOT_COUNT);
 
         this.driver = driver;
         this.results = results;
 
-        this.width = this.getScreenWidth();
-        this.height = this.getScreenHeight();
+        this.width = driver.manage().window().getSize().getWidth();
+        ;
+        this.height = driver.manage().window().getSize().getHeight();
 
         this.udid = driver.getCapabilities().getCapability("deviceName").toString();
 
@@ -83,9 +92,20 @@ public class OperateAppium {
         SCREENSHOT_PATH = System.getProperty("user.dir")
                 + File.separator + String.format("results\\%s\\screenshots\\%s\\", currentTime, getTaskId());
 
+        try {
+            FileUtils.forceMkdir(new File(SCREENSHOT_PATH));
+        } catch (IOException e) {
+            //e.printStackTrace();
+            logger.error("创建截图文件路径:{}失败", SCREENSHOT_PATH);
+        }
+
         logger.info("保存截图的位置为:{}", SCREENSHOT_PATH);
 
 
+    }
+
+    public int getScreenIndex() {
+        return screenIndex;
     }
 
     public int getMaxScreenshotCount() {
@@ -134,28 +154,26 @@ public class OperateAppium {
         return waitAuto(By.xpath(xPath), time);
     }
 
-    /**
-     * 截图
-     */
-    public void screenShot(String fileName) {
 
-        adbUtils.screencap(fileName);
+    public String takeScreenShot() {
 
-/*		File file= driver.getScreenshotAs (OutputType.FILE);
+        String screenShotName = "screenShot" + screenIndex;
 
-		try {
-			FileUtils.copyFile (file,new File (preImageFileName));
-
-		} catch (IOException e) {
-			e.printStackTrace ();
-
-			logger.error("保存截图文件失败 {}",e);
-
-		}*/
+        screenShot(screenShotName);
 
         screenIndex++;
 
-        if (screenIndex > MAX_SCREENSHOT_COUNT) screenIndex = 0;
+        if (screenIndex > MAX_SCREENSHOT_COUNT) screenIndex = 1;
+
+        return screenShotName;
+    }
+
+
+    /**
+     * 截图 由子类实现
+     */
+    public void screenShot(String fileName) {
+
 
     }
 
@@ -165,7 +183,7 @@ public class OperateAppium {
      * @return
      */
     public int getScreenWidth() {
-        return driver.manage().window().getSize().getWidth();
+        return width;
     }
 
     /**
@@ -174,7 +192,7 @@ public class OperateAppium {
      * @return
      */
     public int getScreenHeight() {
-        return driver.manage().window().getSize().getHeight();
+        return height;
     }
 
     /**
@@ -206,10 +224,8 @@ public class OperateAppium {
             logger.info("随机点击控件tagName :{} ", element.getTagName());
             logger.info("随机点击控件Location :{} ", element.getLocation());
 
-            screenShotName = "screenShot" + screenIndex;
-
             //截图
-            screenShot(screenShotName);
+            screenShotName = takeScreenShot();
 
             logger.info("点击截图:{}", screenShotName);
 
@@ -242,7 +258,7 @@ public class OperateAppium {
 
         step.setResult(result);
 
-        results.add(step);
+        results.offer(step);
 
     }
 
@@ -259,6 +275,7 @@ public class OperateAppium {
     public void swipeToUp(int during, int percent) {
         int width = this.width;
         int height = this.height;
+
         driver.swipe(width / 2, height * (percent - 1) / percent, width / 2, height / percent, during);
     }
 
@@ -268,6 +285,7 @@ public class OperateAppium {
     }
 
     public void swipeToLeft(int during) {
+
         swipeToLeft(during, SWIPE_DEFAULT_PERCENT);
 
 
@@ -281,6 +299,7 @@ public class OperateAppium {
     public void swipeToDown(int during, int percent) {
         int width = this.width;
         int height = this.height;
+
         driver.swipe(width / 2, height / percent, width / 2, height * (percent - 1) / percent, during);
     }
 
@@ -294,6 +313,7 @@ public class OperateAppium {
     public void swipeToLeft(int during, int percent) {
         int width = this.width;
         int height = this.height;
+
         driver.swipe(width * (percent - 1) / percent, height / 2, width / percent, height / 2, during);
     }
 
@@ -344,7 +364,7 @@ public class OperateAppium {
             }
         } catch (Exception e) {
 
-            logger.error("swip {} error : e", direction, e);
+            logger.error("Event {} error :{}", direction, e);
 
             result = "fail";
 
@@ -354,14 +374,12 @@ public class OperateAppium {
 
         String screenShotName = null;
 
-        logger.info(" {} : {} ,duration {}", driver.currentActivity(), direction, duration);
+        logger.info(" Event : {} ,duration {}", direction, duration);
 
         try {
 
-            screenShotName = "screenShot" + screenIndex;
-
             //截图
-            screenShot(screenShotName);
+            screenShotName = takeScreenShot();
 
             logger.info("点击截图:{}", screenShotName);
 
@@ -379,9 +397,35 @@ public class OperateAppium {
         step.setScreenShotName(screenShotName);
         step.setResult(result);
 
-        results.add(step);
+        results.offer(step);
+    }
+
+
+    public void clickScreen(int x, int y) {
+
+        String result = "pass";
+
+        Step step = new Step();
+        //截图
+        String screenShotName = takeScreenShot();
+
+        TouchAction action = new TouchAction(this.driver);
+
+        logger.info("Event 点击屏幕 x:{} ,y:{} ", x, y);
+
+        step.setElementName("Page");
+        step.setAction(Action.CLICK_SCREEN);
+        step.setX(x);
+        step.setY(y);
+        step.setScreenShotName(screenShotName);
+        step.setResult(result);
+
+        action.tap(x, y).perform();
+
+        results.offer(step);
 
     }
+
 
     /**
      * 操作方法
@@ -395,13 +439,13 @@ public class OperateAppium {
             case Action.CLICK:
                 click(element);
                 break;
-            case Action.DOBACK:
+            case Action.BACK:
                 back();
                 break;
-            case Action.BACKAPP:
+            case Action.BACK_APP:
                 backApp();
                 break;
-            case Action.LAUNCHAPP:
+            case Action.LAUNCH_APP:
                 driver.launchApp();
                 break;
             case Action.SKIP:
@@ -419,12 +463,12 @@ public class OperateAppium {
      */
     private void backApp() {
 
-        logger.info("back to app");
+        logger.info("Event 尝试返回 app");
 
         driver.navigate().back();
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -434,16 +478,15 @@ public class OperateAppium {
     /**
      * 尝试后退
      */
+    public void homePress() {
+
+
+    }
+
+    /**
+     * 尝试后退
+     */
     public void back() {
-
-        driver.pressKeyCode(4);
-        logger.info("返回 do back");
-        try {
-            Thread.sleep(500);
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
     }
 
@@ -490,7 +533,7 @@ public class OperateAppium {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        System.out.println(OperateAppium.SCREENSHOT_PATH);
+        System.out.println();
 
     }
 

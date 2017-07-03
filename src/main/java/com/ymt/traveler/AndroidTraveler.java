@@ -1,13 +1,14 @@
 package com.ymt.traveler;
 
+import com.ymt.engine.AndroidEngine;
+import com.ymt.engine.Engine;
 import com.ymt.entity.AndroidCapability;
 import com.ymt.entity.Constant;
 import com.ymt.entity.Device;
-import com.ymt.operation.OperateAppium;
 import com.ymt.tools.AdbUtils;
-import com.ymt.tools.CmdUtil;
 import com.ymt.tools.FileUtil;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import org.apache.commons.collections.CollectionUtils;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -18,6 +19,9 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by sunsheng on 2017/5/26.
@@ -28,7 +32,10 @@ public class AndroidTraveler extends Traveler {
 
     private AdbUtils adbUtils;
 
-    private AndroidCapability androidCapability;
+
+    public AndroidCapability androidCapability;
+
+    String deviceName = null;
 
     public AndroidTraveler() {
 
@@ -66,7 +73,6 @@ public class AndroidTraveler extends Traveler {
         //设置收到下一条命令的超时时间,超时appium会自动关闭session 30s
         capabilities.setCapability("newCommandTimeout", "30");
 
-        String deviceName = null;
         String platformVersion = null;
         String url = null;
 
@@ -101,21 +107,20 @@ public class AndroidTraveler extends Traveler {
 
             driver = new AndroidDriver(new URL(url),
                     capabilities);
-
-
-            operateAppium = new OperateAppium(driver, results);
-
+            engine = new AndroidEngine(driver, results);
 
             adbUtils = new AdbUtils(deviceName);
 
             //抓取adb logcat 日志
             adbUtils.start();
 
+            //统计页面访问信息
+            getPageInfo();
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
 
-            operateAppium = new OperateAppium(null, results);
+            //engine = new Engine(null, results);
 
             logger.error("加载 AndroidDriver 失败,{}", e);
 
@@ -126,6 +131,97 @@ public class AndroidTraveler extends Traveler {
         record.setDeviceName(String.format("deviceName %s,systemVersion %s,resolution %s", adbUtils.getDeviceName(), adbUtils.getAndroidVersion(), adbUtils.getScreenResolution()));
 
     }
+
+    /**
+     * 开始随机遍历
+     */
+    @Override
+    public boolean start() {
+
+        boolean isNeedRetry = false;
+
+        try {
+
+            setupDriver();
+
+            beforeTravel();
+
+            logger.debug("Current PageSource:{}", driver.getPageSource());
+
+            //主页面 activity name
+            String mainActivity = driver.currentActivity();
+
+            logger.info("主界面 mainActivity:{}", mainActivity);
+
+            while (true) {
+
+                getPageInfo();
+
+                AndroidElement element = null;
+
+                if (refreshPage()) {
+
+                    element = beforeAction();
+
+                }
+
+                engine.doElementAction(element, getPageAction());
+
+                eventcount++;
+
+            }
+        } catch (Exception e) {
+
+            logger.error("遍历出现异常:{}", e);
+
+            isNeedRetry = true;
+
+        } finally {
+
+            afterTravel();
+
+        }
+
+        return isNeedRetry;
+
+    }
+
+    /**
+     * android 统计页面 activity 访问次数
+     */
+    @Override
+    public void getPageInfo() {
+
+        final ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+
+        Runnable runnable = new Runnable() {
+
+            public void run() {
+                try {
+
+                    logger.info("=======后台异步统计页面访问=======");
+
+                    String pageUrl = adbUtils.getFocusedPackageAndActivity().split("/")[1];
+
+                    if (pageCount.containsKey(pageUrl)) {
+
+                        pageCount.put(pageUrl, pageCount.get(pageUrl) + 1);
+
+                    } else
+                        pageCount.put(pageUrl, 1);
+
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    logger.error("后台异步统计页面访问守护进程 error:{}", e);
+                }
+            }
+        };
+
+        // 第二个参数为首次执行的延时时间，第三个参数为定时执行的间隔时间
+        service.scheduleAtFixedRate(runnable, 15, 3, TimeUnit.SECONDS);
+
+    }
+
 
     /***
      * android 提取appium,adb 日志
@@ -146,6 +242,7 @@ public class AndroidTraveler extends Traveler {
         StringBuilder sbApp = new StringBuilder();
 
         sbApp.append(String.format("**********appium log最后%s行日志**********<br/>\n", lastLineNum));
+
         appiumLog.forEach(s -> {
             sbApp.append(s);
             sbApp.append("<br/>");

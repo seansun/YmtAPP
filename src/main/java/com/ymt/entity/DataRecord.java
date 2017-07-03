@@ -1,5 +1,7 @@
 package com.ymt.entity;
 
+import com.ymt.tools.LimitQueue;
+
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +29,7 @@ public class DataRecord {
 
     private Map<String ,Integer> pageCount;
 
-    private List<Step> results;
+    private LimitQueue<Step>  results;
 
     public Map<String, Integer> getPageCount() {
         return pageCount;
@@ -37,11 +39,11 @@ public class DataRecord {
         this.pageCount = pageCount;
     }
 
-    public List<Step> getResults() {
+    public LimitQueue<Step>  getResults() {
         return results;
     }
 
-    public void setResults(List<Step> results) {
+    public void setResults(LimitQueue<Step>  results) {
         this.results = results;
     }
 

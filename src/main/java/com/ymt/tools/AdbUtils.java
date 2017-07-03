@@ -88,9 +88,7 @@ public class AdbUtils extends Thread {
     @Override
     public void run() {
 
-        String udid = "2bad9d02";
-
-        String cmd = String.format("adb -s %s logcat -b main -b system -b events -b radio *:I", udid);
+        String cmd = String.format("adb -s %s logcat -b main -b system -b events -b radio *:I|%s com.ymatou.shop", this.deviceId,findUtil);
 
         cleanLogcat();
 
@@ -183,7 +181,7 @@ public class AdbUtils extends Thread {
     /**
      * 删除tmp 下的截图文件
      */
-    public void delTmpScreenFile(){
+    public void delTmpScreenFile() {
 
         cmdUtil.runAdbShell("rm -r /data/local/tmp/*.png");
     }
@@ -218,6 +216,38 @@ public class AdbUtils extends Thread {
 
     }
 
+
+    /**
+     * 获取当前应用界面的包名和Activity，返回的字符串格式为：packageName/activityName
+     */
+    public String getFocusedPackageAndActivity() {
+        String line = null;
+
+        line = cmdUtil.runAdbShell(String.format("dumpsys activity activities | %s mFocusedActivity", findUtil)).trim();
+
+        if (!line.isEmpty()) {
+            return line.split(" ")[3];
+        }
+
+        return line;
+    }
+
+    /**
+     * 获取当前应用界面的包名和Activity，返回的字符串格式为：packageName/activityName
+     */
+    public String getCurrentPackageName() {
+
+        String line = null;
+
+        line = getFocusedPackageAndActivity();
+
+        if (!line.isEmpty()) {
+            return line.split("/")[0];
+        }
+
+        return line;
+    }
+
     /**
      * 通过adb 截图
      */
@@ -234,9 +264,21 @@ public class AdbUtils extends Thread {
 
         computerPath = computerPath.replace("\\", "/");
 
-        cmdUtil.runAdbCmd(String.format("pull /data/local/tmp/%s.png %s", filename, computerPath));
+        cmdUtil.runAdbCmd(String.format("-s %s pull /data/local/tmp/%s.png %s", this.deviceId,filename, computerPath));
 
     }
+
+    /**
+     * 启动一个Activity
+     *
+     * @param component "com.android.settinrs/.Settings"
+     */
+    public void startActivity(String component) {
+
+        cmdUtil.runAdbShell(String.format("%s am start -n %s", this.deviceId, component));
+
+    }
+
 
     /**
      * kill adb 进程
@@ -262,13 +304,16 @@ public class AdbUtils extends Thread {
 
         AdbUtils adbUtils = new AdbUtils("2bad9d02");
 
-        for (int i = 0; i < 30; i++) {
-            //adbUtils.screencap(String.valueOf(i));
+        for (int i = 0; i < 1; i++) {
 
-            adbUtils.pullScreen("screenshot" + i, "C:\\Users\\sunsheng\\Desktop\\YmtAPP\\results\\20170622\\screenshots\\0\\" + i + ".png");
+            System.out.println(String.format("pagename%s:", i) + adbUtils.getFocusedPackageAndActivity());
 
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-
 
     }
 }

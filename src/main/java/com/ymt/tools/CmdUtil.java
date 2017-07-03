@@ -44,7 +44,7 @@ public class CmdUtil {
 
         String adbCmd = String.format("adb %s", cmd);
 
-        logger.info("执行的adb 命令为:{}",adbCmd);
+        logger.debug("执行的adb 命令为:{}",adbCmd);
 
         return this.run(adbCmd);
     }
@@ -60,7 +60,7 @@ public class CmdUtil {
 
         String adbCmd = String.format("adb -s %s shell %s",this.deviceId, cmd);
 
-        logger.info("执行的shell 命令为:{}",adbCmd);
+        logger.debug("执行的shell 命令为:{}",adbCmd);
         return this.run(adbCmd);
     }
 

@@ -1,7 +1,7 @@
 package com.ymt.traveler;
 
+import com.ymt.engine.Engine;
 import com.ymt.entity.*;
-import com.ymt.operation.OperateAppium;
 import com.ymt.tools.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -21,7 +21,7 @@ public class Traveler {
 
     public DataRecord record = new DataRecord();
 
-    public List<Step> results = new ArrayList<Step>();
+    public LimitQueue<Step> results = new LimitQueue<Step>();
 
     // 种子值
     public long seed = System.currentTimeMillis();
@@ -30,16 +30,18 @@ public class Traveler {
 
     public List<String> xpathList = null;
 
-    public OperateAppium operateAppium;
+    public Engine engine;
+
+    public static int eventcount = 0;
 
     //可以点击的控件
     public List<String> clickList = new ArrayList<String>();
 
     public List<String> blackList = new ArrayList<String>();
 
-    public long beginTime;
+    public long startTime;
 
-    private static Map<String, Integer> pageCount = new HashMap<String, Integer>();
+    public static Map<String, Integer> pageCount = new HashMap<String, Integer>();
 
     private static String currentPageAction = Action.CLICK;
 
@@ -86,15 +88,17 @@ public class Traveler {
 
         } finally {
 
-            record.setDuringTime(String.format("%s s", (System.currentTimeMillis() - beginTime) / 1000));
+            record.setDuringTime(String.format("%s s", (System.currentTimeMillis() - startTime) / 1000));
 
             getLog();
+
+            record.setTotalStep(eventcount);
 
             record.setPageCount(pageCount);
 
             record.setResults(results);
 
-            new Report().generateReport(record, "YMT", operateAppium.getMaxScreenshotCount());
+            new Report().generateReport(record, "YMT");
 
             cleanEnv();
 
@@ -103,66 +107,23 @@ public class Traveler {
 
     public void beforeTravel() {
 
-        beginTime = System.currentTimeMillis();
+        startTime = System.currentTimeMillis();
 
     }
-
 
     /**
      * 开始随机遍历
      */
     public boolean start() {
+        return true;
 
-        boolean isNeedRetry = false;
-
-        try {
-
-            setupDriver();
-
-            beforeTravel();
-
-            logger.debug("Current PageSource:{}", driver.getPageSource());
-
-            //主页面 activity name
-            String mainActivity = driver.currentActivity();
-
-            logger.info("主界面 mainActivity:{}", mainActivity);
-
-            while (true) {
-
-                getPageInfo();
-
-                AndroidElement element = null;
-
-                if (refreshPage()) {
-
-                    element = beforeAction();
-
-                }
-
-                operateAppium.doElementAction(element, getPageAction());
-
-            }
-        } catch (Exception e) {
-
-            logger.error("遍历出现异常:{}", e.getStackTrace());
-
-            isNeedRetry = true;
-
-        } finally {
-
-            afterTravel();
-
-        }
-
-        return isNeedRetry;
 
     }
 
     /**
      * 刷新页面
      */
-    private boolean refreshPage() {
+    public boolean refreshPage() {
 
         boolean isSuccess = true;
 
@@ -174,13 +135,13 @@ public class Traveler {
 
                 String xpath = "//*[@clickable='true' and @enabled='true']";
 
-                String pageSource = operateAppium.getPageSource();
+                String pageSource = engine.getPageSource();
 
                 //解析 pagesource 超时
                 if (null == pageSource) {
 
                     //android 解析失败，重新尝试 launch app
-                    setPageAction(Action.LAUNCHAPP);
+                    setPageAction(Action.LAUNCH_APP);
                     logger.info("driver:{} ,解析 pageSource超时,pageSource为null", driver);
                     return false;
                 }
@@ -202,13 +163,13 @@ public class Traveler {
                 List<Map<String, String>> pageAttributes = xmlParser.getAttributes(nodeList);
 
                 if (CollectionUtils.isEmpty(pageAttributes)) {
-                    setPageAction(Action.DOBACK);
+                    setPageAction(Action.BACK);
 
                     return false;
                 }
                 if (!getValidElement(pageAttributes)) {
 
-                    setPageAction(Action.DOBACK);
+                    setPageAction(Action.BACK);
 
                     return false;
                 }
@@ -225,7 +186,7 @@ public class Traveler {
 
                     System.exit(-1);
 
-                    setPageAction(Action.BACKAPP);
+                    setPageAction(Action.BACK_APP);
 
                     logger.info("currentActivity: {},appName:{} ", appName, driver.currentActivity());
 
@@ -246,25 +207,16 @@ public class Traveler {
     }
 
     /**
-     * android 统计页面 activity 访问次数
+     * 统计页面 page 访问次数
      */
-    private void getPageInfo() {
-
-        String pageUrl = driver.currentActivity();
-
-        if (pageCount.containsKey(pageUrl)) {
-
-            pageCount.put(pageUrl, pageCount.get(pageUrl) + 1);
-
-        } else
-            pageCount.put(pageUrl, 1);
+    public void getPageInfo() {
 
     }
 
     /**
      * 随机动作
      */
-    private AndroidElement beforeAction() {
+    public AndroidElement beforeAction() {
 
         AndroidElement element = null;
 
@@ -278,13 +230,13 @@ public class Traveler {
 
                 logger.info("元素定位xpath为:{}", xpath);
 
-                element = operateAppium.waitAutoByXp(xpath);
+                element = engine.waitAutoByXp(xpath);
 
                 if (null == element) {
 
                     logger.info("元素 element为:null return");
 
-                    setPageAction(Action.DOBACK);
+                    setPageAction(Action.BACK);
 
                     return element;
 
@@ -474,7 +426,7 @@ public class Traveler {
 
                     String action = operate.getAction();
 
-                    if (action.equalsIgnoreCase(Action.DOBACK)) {
+                    if (action.equalsIgnoreCase(Action.BACK)) {
 
                         logger.info("triggerProcessing DOBACK");
 
@@ -487,7 +439,7 @@ public class Traveler {
 
                         logger.info("triggerProcessing CLICK");
 
-                        AndroidElement element = operateAppium.waitAutoByXp(operate.getXpath(), 1);
+                        AndroidElement element = engine.waitAutoByXp(operate.getXpath(), 1);
 
                         if (element != null) {
 
@@ -513,17 +465,6 @@ public class Traveler {
 
 
     public static void main(String... args) {
-
-        Traveler traveler = new AndroidTraveler();
-
-        boolean result = traveler.start();
-
-
-        while (result) {
-
-            result = traveler.start();
-
-        }
 
 
     }
