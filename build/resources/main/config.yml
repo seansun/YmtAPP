@@ -72,11 +72,8 @@ triggerActions:
   - triggerCondition: "//*[@text='登录']"
     actionList:
       - step: 1
-        xpath:  ""
         action: "back"
-        text:
       - step: 2
         xpath:  ""
         action: "set"
         text:
-
